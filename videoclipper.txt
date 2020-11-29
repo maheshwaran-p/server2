@@ -1,0 +1,223 @@
+import 'package:flutter/material.dart';
+import 'package:video_trimmer/storage_dir.dart';
+import 'package:video_trimmer/trim_editor.dart';
+import 'package:video_trimmer/video_trimmer.dart';
+import 'package:video_trimmer/video_viewer.dart';
+import 'package:myapp/addpage/arguments.dart';
+import 'package:flutter_ffmpeg/flutter_ffmpeg.dart';
+import 'package:flutter_ijkplayer/flutter_ijkplayer.dart';
+final FlutterFFmpeg _flutterFFmpeg = FlutterFFmpeg();
+
+class videoClipper extends StatefulWidget {
+  final Trimmer _trimmer;
+
+  videoClipper(this._trimmer);
+  @override
+  _videoClipperState createState() => _videoClipperState();
+}
+
+class _videoClipperState extends State<videoClipper> {
+   IjkMediaController controller = IjkMediaController();
+    @override
+  initState() {
+    super.initState();
+    setUpResources();
+  }
+
+  Future<void> setUpResources() async {
+    await controller.setNetworkDataSource(
+      'videoPath',
+      autoPlay: true,
+    );
+    await controller.playOrPause();
+    controller.setSpeed(speed);
+
+    print("set data source success");
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  double speed = 1;
+  double _startValue = 0.0;
+  bool showButtons = false;
+  double _endValue = 0.0;
+  String outputPath;
+  bool _isPlaying = false;
+  bool _progressVisibility = false;
+  bool isCompressing = false;
+  String timestamp = DateTime.now().millisecondsSinceEpoch.toString();
+
+  Future<String> _saveVideo() async {
+    setState(() {
+      _progressVisibility = true;
+    });
+
+    String _value;
+
+    await widget._trimmer
+        .saveTrimmedVideo(
+      startValue: _startValue,
+      endValue: _endValue,
+      storageDir: StorageDir.externalStorageDirectory,
+      videoFolderName: "HipHop",
+    )
+        .then((value) {
+      setState(() {
+        _progressVisibility = false;
+        _value = value;
+      });
+    });
+
+    return _value;
+  }
+
+  @override
+  Widget  build(BuildContext context) {
+    return Scaffold(
+      body: Builder(
+        builder: (context) => Center(
+          child: Container(
+            padding: EdgeInsets.only(bottom:  MediaQuery.of(context).size.width*0.07,),
+            color: Colors.black,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                (showButtons)?
+                 _speed():_speed(),
+                 
+
+                 SizedBox
+                 (
+                   height: 0,
+                   child: 
+                 FloatingActionButton(
+
+                   child: Icon(Icons.timer,size: 28,),
+                   onPressed: ()=> showButtons = true,
+                   ),  ),
+                   SizedBox(height:0 ,width: 0,),
+                Expanded(
+                  child: VideoViewer(),
+                ),
+                (isCompressing)
+                    ? Center(child: CircularProgressIndicator())
+                    : Center(
+                        child: TrimEditor(
+                          viewerHeight: 50.0,
+                          viewerWidth: MediaQuery.of(context).size.width,
+                          onChangeStart: (value) {
+                            _startValue = value;
+                          },
+                          onChangeEnd: (value) {
+                            _endValue = value;
+                          },
+                          onChangePlaybackState: (value) {
+                            setState(() {
+                              _isPlaying = value;
+                            });
+                          },
+                        ),
+                      ),
+                FlatButton(
+                  child: _isPlaying
+                      ? Icon(
+                          Icons.pause,
+                          size:  MediaQuery.of(context).size.width*0.125,
+                          color: Colors.white,
+                        )
+                      : Icon(
+                          Icons.play_arrow,
+                          size: MediaQuery.of(context).size.width*0.125,
+                          color: Colors.white,
+                        ),
+                  onPressed: () async {
+                    bool playbackState =
+                        await widget._trimmer.videPlaybackControl(
+                      startValue: _startValue,
+                      endValue: _endValue,
+                    );
+                    setState(() {
+                      _isPlaying = playbackState;
+                    });
+                  },
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _progressVisibility
+            ? null
+            : () async {
+                _saveVideo().then((_video) {
+                  Navigator.pushNamed(context, '/sendPage',
+                      arguments: uploadData(_video));
+                });
+              },
+        child: Icon(Icons.send),
+      ),
+    );
+  }
+
+ 
+
+
+   Widget  _speed() {
+    return Container(
+     margin: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.173,top: MediaQuery.of(context).size.width*0.004),
+   //   width: MediaQuery.of(context).size.width*0.1,
+    //  height:MediaQuery.of(context).size.height*0.1,
+      child: Row(children: [
+    
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height:30,
+                width:60,child:
+              RaisedButton(
+                onPressed: () {
+                  if (speed > 0.25) {
+                    speed = speed - 0.25;
+                  }
+                  setState(() {
+                    controller.setSpeed(speed);
+                  });
+                },
+                child: Icon(Icons.indeterminate_check_box,size: 20,),
+               ), ),
+              Padding(
+                padding: const EdgeInsets.all(56.0),
+                child: Text('$speed'),
+              ),
+              SizedBox(
+                width: 60,  
+                height:30,
+                child:
+              RaisedButton(
+                
+                
+                onPressed: () {
+                  speed = speed + 0.25;
+                  setState(() {
+                    controller.setSpeed(speed);
+                  });
+                },
+                child: Icon(Icons.add,size: 20,),
+              ),
+                )  ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+

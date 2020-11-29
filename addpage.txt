@@ -1,0 +1,627 @@
+import 'dart:async';
+import 'dart:io';
+import 'package:camera/camera.dart';
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:video_player/video_player.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'arguments.dart';
+import 'package:myapp/bottomNavigationBar.dart';
+
+class addPage extends StatefulWidget {
+  @override
+  _addPageState createState() => _addPageState();
+}
+
+class _addPageState extends State<addPage> {
+  bool save = false;
+  CameraController controller;
+  List cameras;
+  int selectedCameraIdx;
+  String imagePath;
+  String videoPath;
+  VideoPlayerController videoController;
+  VoidCallback videoPlayerListener;
+  bool enableAudio = true;
+  File audioFile;
+  Duration duration = new Duration(seconds: 100);
+  Duration position = new Duration(seconds: 0);
+  AudioCache audioCache;
+  AudioPlayer audioPlayer = AudioPlayer();
+  Duration audioDuration = Duration(seconds: 0);
+
+  Timer _timer;
+  int _start = 30;
+  AnimationController animationController;
+  @override
+  void initState() {
+    super.initState();
+
+    availableCameras().then((availableCameras) {
+      cameras = availableCameras;
+      if (cameras.length > 0) {
+        setState(() {
+          selectedCameraIdx = 1;
+        });
+
+        _initCameraController(cameras[selectedCameraIdx]).then((void v) {});
+      } else {
+        print("No camera available");
+      }
+    }).catchError((err) {
+      print('Error: $err.code\nError Message: $err.message');
+    });
+  }
+
+  void startTimer() {
+    const oneSec = const Duration(seconds: 1);
+    _timer = new Timer.periodic(
+      oneSec,
+      (Timer timer) => setState(
+        () {
+          if (_start < 1) {
+            audioPlayer.stop();
+            audioPlayer.release();
+            onStopButtonPressed();
+            timer.cancel();
+            _start = 30;
+          } else {
+            _start = _start - 1;
+          }
+        },
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    audioPlayer?.dispose();
+    videoController?.dispose();
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  String timestamp() => DateTime.now().millisecondsSinceEpoch.toString();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  void showInSnackBar(String message) {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  IconData _getCameraLensIcon(CameraLensDirection direction) {
+    switch (direction) {
+      case CameraLensDirection.back:
+        return Icons.camera_rear;
+      case CameraLensDirection.front:
+        return Icons.camera_front;
+      case CameraLensDirection.external:
+        return Icons.camera;
+      default:
+        return Icons.device_unknown;
+    }
+  }
+
+  void logError(String code, String message) =>
+      print('Error: $code\nError Message: $message');
+
+  void _showCameraException(CameraException e) {
+    logError(e.code, e.description);
+    showInSnackBar('Error: ${e.code}\n${e.description}');
+  }
+
+  Future _initCameraController(CameraDescription cameraDescription) async {
+    if (controller != null) {
+      await controller.dispose();
+    }
+    controller = CameraController(cameraDescription, ResolutionPreset.high);
+
+    controller.addListener(() {
+      if (mounted) {
+        setState(() {});
+      }
+      if (controller.value.hasError) {
+        print('Camera error ${controller.value.errorDescription}');
+      }
+    });
+    try {
+      await controller.initialize();
+    } on CameraException catch (e) {
+      print(e);
+    }
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  void _onSwitchCamera() {
+    selectedCameraIdx =
+        selectedCameraIdx < cameras.length - 1 ? selectedCameraIdx + 1 : 0;
+    CameraDescription selectedCamera = cameras[selectedCameraIdx];
+    _initCameraController(selectedCamera);
+  }
+
+  Widget _cameraPreviewWidget() {
+    if (controller == null || !controller.value.isInitialized) {
+      return const Text(
+        'Loading',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25.0,
+          fontWeight: FontWeight.w900,
+        ),
+      );
+    }
+
+    return AspectRatio(
+      aspectRatio: controller.value.aspectRatio,
+      child: CameraPreview(controller),
+    );
+  }
+
+  void onNewCameraSelected(CameraDescription cameraDescription) async {
+    if (controller != null) {
+      await controller.dispose();
+    }
+    controller = CameraController(
+      cameraDescription,
+      ResolutionPreset.medium,
+      enableAudio: enableAudio,
+    );
+
+    // If the controller is updated then update the UI.
+    controller.addListener(() {
+      if (mounted) setState(() {});
+      if (controller.value.hasError) {
+        showInSnackBar('Camera error ${controller.value.errorDescription}');
+      }
+    });
+
+    try {
+      await controller.initialize();
+    } on CameraException catch (e) {
+      _showCameraException(e);
+    }
+
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  void onVideoRecordButtonPressed() {
+    startVideoRecording().then((String filePath) {
+      if (mounted) setState(() {});
+      if (position != null) audioDuration = position;
+    });
+  }
+
+  void onStopButtonPressed() {
+    stopVideoRecording().then((_) {
+      if (mounted) setState(() {});
+      _timer.cancel();
+      _start = 30;
+    });
+  }
+
+  void onPauseButtonPressed() {
+    pauseVideoRecording().then((_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  void onResumeButtonPressed() {
+    resumeVideoRecording().then((_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  Future<String> startVideoRecording() async {
+    if (!controller.value.isInitialized) {
+      showInSnackBar('Error: select a camera first.');
+      return null;
+    }
+
+    final Directory extDir = await getExternalStorageDirectory();
+    final String dirPath = '${extDir.path}/HipHop/Recordings';
+    await Directory(dirPath).create(recursive: true);
+    final String filePath = '$dirPath/${timestamp()}_.mp4';
+
+    if (controller.value.isRecordingVideo) {
+      // A recording is already started, do nothing.
+      return null;
+    }
+
+    try {
+      videoPath = filePath;
+      await controller.startVideoRecording(filePath);
+    } on CameraException catch (e) {
+      _showCameraException(e);
+      return null;
+    }
+    return filePath;
+  }
+
+  Future<void> stopVideoRecording() async {
+    if (!controller.value.isRecordingVideo) {
+      return null;
+    }
+
+    try {
+      await controller.stopVideoRecording();
+    } on CameraException catch (e) {
+      _showCameraException(e);
+      return null;
+    }
+  }
+
+  Future<void> pauseVideoRecording() async {
+    if (!controller.value.isRecordingVideo) {
+      return null;
+    }
+
+    try {
+      await controller.pauseVideoRecording();
+    } on CameraException catch (e) {
+      _showCameraException(e);
+      rethrow;
+    }
+  }
+
+  Future<void> resumeVideoRecording() async {
+    if (!controller.value.isRecordingVideo) {
+      return null;
+    }
+
+    try {
+      await controller.resumeVideoRecording();
+    } on CameraException catch (e) {
+      _showCameraException(e);
+      rethrow;
+    }
+  }
+
+  Widget _mainVideoButton() {
+    return RawMaterialButton(
+        elevation: 2.0,
+        fillColor: Colors.black,
+        child: Icon(
+          Icons.camera,
+          size: MediaQuery.of(context).size.height*0.0369,
+          color: Colors.white,
+        ),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.height*0.0133,),
+        shape: CircleBorder(),
+        onPressed: () {
+          controller != null &&
+                  controller.value.isInitialized &&
+                  !controller.value.isRecordingVideo
+              ? onVideoRecordButtonPressed()
+              : null;
+          controller != null &&
+                  controller.value.isInitialized &&
+                  !controller.value.isRecordingVideo
+              ? startTimer()
+              : null;
+          if (audioPlayer.state == AudioPlayerState.PAUSED) {
+            audioPlayer.resume();
+          }
+          (audioPlayer == null)
+              ? null
+              : audioPlayer.play(audioFile.path, isLocal: true);
+        });
+  }
+
+  Widget _actionButtons() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            controller.value.isRecordingVideo
+                ? IconButton(
+                    enableFeedback: false,
+                    highlightColor: Colors.transparent,
+                    icon: Icon(
+                      controller.value.isRecordingPaused
+                          ? Icons.play_circle_filled
+                          : Icons.pause_circle_outline,
+                      color: Colors.redAccent,
+                      size:MediaQuery.of(context).size.height*0.045,
+                    ),
+                    onPressed: () {
+                      controller != null &&
+                              controller.value.isInitialized &&
+                              controller.value.isRecordingVideo
+                          ? (controller != null &&
+                                  controller.value.isRecordingPaused
+                              ? onResumeButtonPressed()
+                              : onPauseButtonPressed())
+                          : null;
+                      controller.value.isRecordingPaused
+                          ? _timer.cancel()
+                          : startTimer();
+                      controller.value.isRecordingPaused
+                          ? audioPlayer.pause()
+                          : audioPlayer.resume();
+                    })
+                : IconButton(
+                    enableFeedback: false,
+                    highlightColor: Colors.transparent,
+                    icon: Icon(
+                      Icons.cached,
+                      color: Colors.white38,
+                      size:MediaQuery.of(context).size.height*0.0485,
+                    ),
+                    onPressed: () {
+                      _onSwitchCamera();
+                    }),
+            SizedBox(
+              width: MediaQuery.of(context).size.height*0.089,
+            ),
+            _mainVideoButton(),
+            SizedBox(
+              width: MediaQuery.of(context).size.height*0.089,
+            ),
+            controller.value.isRecordingVideo
+                ? IconButton(
+                    icon: Icon(
+                      Icons.stop,
+                      color: Colors.redAccent,
+                      size: MediaQuery.of(context).size.height*0.049,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        save = true;
+                      });
+                      controller != null &&
+                              controller.value.isInitialized &&
+                              controller.value.isRecordingVideo
+                          ? onStopButtonPressed()
+                          : null;
+                      _timer.cancel();
+                      _start = 30;
+                      audioPlayer.stop();
+                      audioPlayer.release();
+                    })
+                : IconButton(
+                    icon: Icon(
+                      Icons.image,
+                      color: Colors.white38,
+                      size: MediaQuery.of(context).size.height*0.046,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/videopage');
+                    },
+                  )
+          ],
+        ),
+        SizedBox(
+          height:MediaQuery.of(context).size.height*0.0154,
+        ),
+        Text(
+          "0:$_start",
+          style: TextStyle(color: Colors.redAccent, fontSize: MediaQuery.of(context).size.height*0.023,),
+        ),
+        SizedBox(
+          height:MediaQuery.of(context).size.height*0.06,
+          //width:MediaQuery.of(context).size.height*0.28,
+        )
+      ],
+    );
+  }
+
+  void seekToSecond(int second) {
+    Duration newDuration = Duration(seconds: second);
+    audioPlayer.seek(newDuration);
+    audioPlayer.resume();
+  }
+
+  double rating;
+  Widget audioSlider() {
+    return Container(
+       margin: EdgeInsets.only(bottom:MediaQuery.of(context).size.width*0.09, ),
+        width:MediaQuery.of(context).size.width*0.98,
+        child: Slider(
+            value: position.inSeconds.toDouble(),
+            min: 0.0,
+            max: duration.inSeconds.toDouble(),
+            onChanged: (value) {
+              print(value);
+              setState(() {
+                audioState = Icons.pause;
+                seekToSecond(value.toInt());
+                position = Duration(seconds: value.toInt());
+              });
+            }));
+  }
+
+  _getAudioFile() async {
+    audioFile = await FilePicker.getFile(type: FileType.audio);
+    audioPlayer.play(audioFile.path, isLocal: true);
+    audioCache = AudioCache(fixedPlayer: audioPlayer);
+
+    audioPlayer.onDurationChanged.listen((Duration d) {
+      duration = d;
+    });
+
+    audioPlayer.onAudioPositionChanged.listen((Duration p) {
+      position = p;
+    });
+
+    setState(() {});
+  }
+
+  Widget audioPicking() {
+    return Container(
+      
+      margin: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.048,),
+      width:MediaQuery.of(context).size.width*0.13,
+      height:MediaQuery.of(context).size.width*0.13,
+      child: RawMaterialButton(
+        
+         // elevation: 2.0,
+         
+          fillColor: Colors.white12,
+          child: Icon(
+            Icons.music_note,
+            size: MediaQuery.of(context).size.height*0.03,
+          ),
+          shape: CircleBorder(),
+          onPressed: () {
+            _getAudioFile();
+          }),
+    );
+  }
+
+  IconData audioState = Icons.pause;
+  Widget audioPlayerController() {
+    if (audioFile == null) return Container();
+    return Container(
+     // color: Colors.green,
+      margin: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.048, top: MediaQuery.of(context).size.width*0.03),
+      width: MediaQuery.of(context).size.width*0.133,
+      height:MediaQuery.of(context).size.width*0.133,
+      child: RawMaterialButton(
+        //  elevation: 2.0,
+          fillColor: Colors.white12,
+          child: Icon(
+            audioState,
+            size: MediaQuery.of(context).size.height*0.032,
+          ),
+          shape: CircleBorder(),
+          onPressed: () {
+            (audioPlayer.state == AudioPlayerState.PAUSED)
+                ? audioPlayer.resume()
+                : audioPlayer.pause();
+            audioState = (audioPlayer.state == AudioPlayerState.PAUSED)
+                ? Icons.pause
+                : Icons.play_arrow;
+            setState(() {});
+          }),
+    );
+  }
+
+  Widget saveButton() {
+    return Container(
+      margin: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.048, top: MediaQuery.of(context).size.width*0.03),
+      width: MediaQuery.of(context).size.width*0.133,
+      height:MediaQuery.of(context).size.width*0.133,
+      child: RawMaterialButton(
+          //elevation: 2.0,
+          fillColor: Colors.white12,
+          child: Icon(
+            Icons.send,
+            size: MediaQuery.of(context).size.height*0.034,
+          ),
+          shape: CircleBorder(),
+          onPressed: () {
+            if (audioFile == null && videoPath != null) {
+              Navigator.pushNamed(context, '/videoPasser',
+                  arguments: clipperData(videoPath, selectedCameraIdx));
+            }
+            if (audioFile != null) {
+              audioDuration = audioDuration + Duration(milliseconds: 500);
+              Navigator.pushNamed(context, '/aveditor',
+                  arguments: sentData(audioFile, File(videoPath),
+                      selectedCameraIdx, audioDuration));
+            }
+          }),
+    );
+  }
+
+  Widget speed() {
+    return Container(
+      margin: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.048, top: MediaQuery.of(context).size.width*0.03),
+      width: MediaQuery.of(context).size.width*0.133,
+      height:MediaQuery.of(context).size.width*0.133,
+      child: RawMaterialButton(
+          //elevation: 2.0,
+          fillColor: Colors.white12,
+          child: Icon(
+            Icons.timer,
+            size: MediaQuery.of(context).size.height*0.034,
+          ),
+          shape: CircleBorder(),
+          onPressed: () {
+            
+          }),
+    );
+  }
+   Widget text() {
+    return Container(
+      margin: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.048, top: MediaQuery.of(context).size.width*0.03),
+      width: MediaQuery.of(context).size.width*0.133,
+      height:MediaQuery.of(context).size.width*0.133,
+      child: RawMaterialButton(
+          //elevation: 2.0,
+          fillColor: Colors.white12,
+          child: Icon(
+            Icons.text_fields,
+            size: MediaQuery.of(context).size.height*0.034,
+          ),
+          shape: CircleBorder(),
+          onPressed: () {
+            
+          }),
+    );
+  }
+
+  Widget sideController() {
+    return Positioned(
+      
+      bottom: MediaQuery.of(context).size.height*0.16383,
+   
+      right: MediaQuery.of(context).size.width*0.00009,
+    
+      width: MediaQuery.of(context).size.width*0.21,
+      
+      height:  MediaQuery.of(context).size.height *0.3133,
+   
+      child: (!save)
+          ? Container(
+            //color: Colors.red,
+              child: Column(
+                children: <Widget>[
+                  audioPicking(),
+                  speed(),
+                  text(),
+                  audioPlayerController(),
+                ],
+              ),
+            )
+          : Container(
+          
+           
+              child: Column(
+                children: <Widget>[
+                  audioPicking(),
+                  speed(),
+                  text(),
+                  audioPlayerController(),
+                  saveButton(),
+                ],
+              ),
+            ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      key: _scaffoldKey,
+      body: Container(
+        child: Stack(
+          children: <Widget>[
+            Center(child: _cameraPreviewWidget()),
+            Container(child: sideController()),
+            (audioFile != null) ? audioSlider() : Container(),
+            _actionButtons(),
+            bottomNavigationBar(),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        .zoom {
+            align-self: start;
+            padding: 5px;
+            transition: transform .5s;
+            width: 55px;
+            height: 55px;
+            margin: 20 auto;
+        }
+        #text{
+            align-content: center;
+        }
+        .button{
+            margin-top: 300;
+           margin-left: 725;
+        }
+        .button2{
+            margin-top: 300;
+           margin-left: 45;
+        }
+        .image:hover div{
+ width: 100px;
+ padding: 8px 15px;
+ visibility: visible;
+ opacity: 0.7; 
+}
+    </style>
+    <div class="zoom" id="zoom">
+      
+        <div id="image">
+            <img src="https://static.wixstatic.com/media/275ab7_9f3badb0ff104135bdd35edf273e84b3~mv2.jpg/v1/fill/w_602,h_480,al_c,q_80,usm_0.66_1.00_0.01/Untitled.webp" width="270" height="220" id="image" onMouseOver="showText('Gct Students are the examples of friendship')" onMouseOut="hide();">
+            <div id="text"></div>
+        </div>
+    </div>
+    <button class="button" onclick="zoomin()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button class="button2" onclick="zoomout()"><i class="fa fa-minus" aria-hidden="true"></i></i></button>
+    
+    
+    
+    <script>
+
+function showText(text){
+    document.getElementById("text").innerHTML=text;
+}
+function hide(){
+    document.getElementById("text").innerHTML="";
+}
+        function zoomin() {
+            var zoom = document.getElementById('zoom');
+            zoom.style.transform = "scale(1.40)";
+        }
+        function zoomout() {
+            var zoom = document.getElementById('zoom');
+            zoom.style.transform = "scale(0.50)";
+        }
+      
+        </script>
+
+</body>
+</html>

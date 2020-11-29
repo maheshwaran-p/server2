@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Form</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+</head>
+
+<body>
+   <style>
+       body{align-self: center;
+           color: #000;
+           background:greenyellow;
+           
+           background-image: url("https://tse3.mm.bing.net/th?id=OIP.Dngzg47I_lg1lu8ypug11wHaE8&pid=Api&P=0&w=275&h=184" );
+         
+         height: 100%;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+           
+       }
+   </style>
+    <form style="padding-left: 20px;" enctype="multipart/form-data" onsubmit="return validate()"><br>
+        Username : <input type="text" name="username" id="username" required><br><br>
+        D.O.B : <input type="date" name="dob" id="dob" required><br><br>
+        Email : <input type="email" name="email" id="email" required><br><br>
+        Password : <input type="password" name="password" id="password" required><br><br>
+        Choose file : <input type="file" name="fileinput" id="fileinput"><br><br>
+        <button type="submit">submit</button>
+    </form>
+  
+
+<script>
+   
+    function validate() {
+        var username = document.getElementById('username');
+        var dob = document.getElementById('dob');
+        var email = document.getElementById('email');
+        var eligible = dateCalculation();
+        var validPassword = passwordValidation();
+        var emailCheck = /\S+@\S+\.\S+/.test(email.value);
+        var submitCheck = new Boolean(true);
+        if (username.value.length == 0) {
+            submitCheck = false;
+            window.alert("username is empty");
+        }
+        else if (eligible == false) {
+            submitCheck = false;
+            window.alert("minimum age requirement 25 is not satisfied");
+        }
+        else if (emailCheck == false) {
+            submitCheck = false;
+            window.alert("email is not valid");
+        }
+        else if (validPassword == false) {
+            submitCheck = false;
+            window.alert("Password lenth should be greater than 7 and at least contains one Upper case , Lower case ,numericaland symbol");
+        }
+        if (submitCheck)
+            window.location.href="second.html";
+        return false;
+    }
+    function dateCalculation() {
+        var dob = document.getElementById('dob');
+        var date = new Date();
+        var dobData = new Date(dob.value);
+        var age = date.getFullYear() - dobData.getFullYear();
+        if (age >= 25) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    function passwordValidation() {
+        var passwordObj = document.getElementById('password');
+        var password = new String(passwordObj.value);
+        var isCaptial = new Boolean(false);
+        var isLower = new Boolean(false);
+        var isNumerical = new Boolean(false);
+        var isSymbolic = new Boolean(false);
+        var isNotNumerical = new Boolean(false);
+        var isPasswordValid = new Boolean(false);
+        if (password.length >= 8)
+            for (var index = 0; index < password.length; index++) {
+                console.log(isLower);
+                console.log(isCaptial);
+                console.log(isNumerical);
+                console.log(isSymbolic);
+                if (password[index] == password[index].toUpperCase()) {
+                    isCaptial = true;
+                }
+                if (password[index] == password[index].toLowerCase()) {
+                    isLower = true;
+                }
+                isNumerical = /^[0-9]+$/.test(password[index]);
+                isNotNumerical = /^[a-zA-Z]+$/.test(password[index]);
+                if (!(isNumerical == true) && !(isNotNumerical == true))
+                    isSymbolic = true;
+
+
+                if ((isCaptial == true) && (isSymbolic == true) && (isNumerical == true) && (isLower == true)) {
+                    isPasswordValid = true;
+                    break;
+                }
+
+            }
+        return isPasswordValid;
+    }
+</script>
+</body>
+</html>

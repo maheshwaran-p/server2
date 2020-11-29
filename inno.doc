@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Word Editor Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Free online document editor. View, edit, convert Word documents with advanced WYSIWYG editor." />
+    <meta name="theme-color" content="#3C7DE7" />
+
+<link rel="canonical" href="https://products.aspose.app/words/editor"/>    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/plugins/unveilhooks/ls.unveilhooks.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" as="style"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" />
+
+
+    
+    
+    <link type="text/css" rel="stylesheet" href="/css/words/common.min.css" />
+
+    
+    <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/css/words/AsposePtyLtdMenu.min.css" />
+
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/words/asposeapp.min.css" type="text/css" />
+
+
+        <script type="application/ld+json">
+            {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","name":"breadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://products.aspose.app/","name":"Aspose Product Family"}},{"@type":"ListItem","position":2,"item":{"@id":"https://products.aspose.app/words/family","name":"Words"}},{"@type":"ListItem","position":3,"item":{"@id":"https://products.aspose.app/words/Editor","name":"Editor"}}]},{"@type":"HowTo","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowToExample/Step5.png","height":"670","width":"992"},"estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"0"},"totalTime":"PT1M","tool":{"@type":"HowToTool","name":"Chrome, Firefox or Safari"},"supply":[{"@type":"HowToSupply","name":"Document file"}],"step":[{"@type":"HowToStep","name":"Upload your document file.","text":"Click inside the file drop area to upload a document file or drag & drop a document file.","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowTo/Step1.png","height":"729","width":"992"},"url":"https://products.aspose.app/words/editor"},{"@type":"HowToStep","name":"Get your rendered result","text":"File will be automatically rendered for you to view, edit & download instantly.","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowTo/Step2.png","height":"729","width":"992"},"url":"https://products.aspose.app/words/editor"},{"@type":"HowToStep","name":"Download or edited document file.","text":"Download the original or edited document file.","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowTo/Step3.png","height":"729","width":"992"},"url":"https://products.aspose.app/words/editor"},{"@type":"HowToStep","name":"Convert & download the edited document file as PDF.","text":"Convert & download the edited document file as PDF.","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowTo/Step4.png","height":"729","width":"992"},"url":"https://products.aspose.app/words/editor"},{"@type":"HowToStep","name":"Convert & download the edited document file as HTML.","text":"Convert & download the edited document file as HTML.","image":{"@type":"ImageObject","url":"https://products.aspose.app/img/words/HowTo/Step5.png","height":"729","width":"992"},"url":"https://products.aspose.app/words/editor"}],"datePublished":"2018-06-20T12:00:00+00:00","isFamilyFriendly":true,"isAccessibleForFree":true,"inLanguage":"English","name":"How to edit a document file online","description":"Edit Word document online.","url":"https://products.aspose.app/words/editor"}]}
+        </script>
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Aspose Words Free Apps" />
+        <meta property="og:title" content="Free online document editor" />
+        <meta property="og:description" content="Free online document editor. View, edit, convert Word documents with advanced WYSIWYG editor." />
+        <meta property="og:image" content="https://products.aspose.app/img/aspose_words-for-net.png" />
+        <meta property="og:url" content="https://products.aspose.app/words/editor" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@AsposeWords" />
+        <meta name="twitter:creator" content="@AsposeWords" />
+        <meta name="twitter:title" content="Free online document editor" />
+        <meta name="twitter:description" content="Free online document editor. View, edit, convert Word documents with advanced WYSIWYG editor." />
+        <meta name="twitter:image:src" content="https://products.aspose.app/img/aspose_words-for-net.png" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3109235-5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-3109235-5');
+        </script>
+    </head>
+<body>
+    <div id="DynabicMenuInnerDiv"></div>
+
+    
+
+
+<div id="main" class="asposetools"
+     >
+    <div class="container">
+        <div class="row">
+            <div class="workplace">
+                <h1 id="ProductTitle">Free online document editor</h1>
+                <h2 id="ProductTitleSub">Edit Word document online.</h2>
+
+                <div id="WorkPlaceHolder" data-nosnippet>
+                    <form id="UploadFile" name="UploadFile" method="POST" enctype="multipart/form-data">
+                        
+                            <div class="filedrop filedrop-mvc fileplacement lazyload" id="filedrop-1" data-nosnippet="">
+                                <label for="UploadFileInput-1">Drop or upload your files</label>
+                                <input type="file" class="uploadfileinput"
+                                       id="UploadFileInput-1"
+                                       name="UploadFileInput-1"
+                                       title=""
+                                       accept=".docx,.pdf,.md,.rtf,.html,.doc,.dotx,.dot,.odt,.ott,.txt,.mht,.mhtml,.xhtml"
+                                       >
+                            </div>
+
+
+                    </form>
+                </div>
+
+                <p id="alertMessage" class="alert alert-danger hidden"></p>
+                <p id="alertSuccess" class="alert alert-success hidden"></p>
+
+                <div id="loaderPlaceHolder" data-nosnippet>
+                    <div id="loader" class="hidden" role="status" aria-hidden="true">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 15%">15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="Promo" class="">
+        <div class="container-fluid">
+    <div class="row">
+        <h3>Try our <a class="promo" href="https://chrome.google.com/webstore/detail/aspose-github-docviewer/hccnpbnoghefpelicokfcnngmaodbjii" target="_blank" data-label="Aspose GitHub DocViewer" rel="noopener">Chrome Extension</a> to view documents on GitHub pages</h3></br>
+    </div>
+    <div class="row">
+        <div id="promo_carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#promo_carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#promo_carousel" data-slide-to="1"></li>
+                <li data-target="#promo_carousel" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="/img/words/promo_agdv-1.png" alt="Screenshot 1">
+                </div>
+                <div class="item">
+                    <img src="/img/words/promo_agdv-2.png" alt="Screenshot 2">
+                </div>
+                <div class="item">
+                    <img src="/img/words/promo_agdv-3.png" alt="Screenshot 3">
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#promo_carousel" role="button" data-slide="prev">
+                <i class="fa fa-caret-left" aria-hidden="true">&nbsp;</i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#promo_carousel" role="button" data-slide="next">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <div class="pt-5 app-product-section tl">
+        <div class="container">
+            <div class="col-md-9 pull-left">
+                <h2><a id="AsposeProductTitle" target="_blank" href="https://products.aspose.com/words" rel="noopener">Aspose.Words</a> Editor</h2>
+                <ul>
+                            <li>Edit <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/docx/">DOCX</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/view/pdf/">PDF</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/md/">MD</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/rtf/">RTF</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/web/html/">HTML</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/doc/">DOC</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/dotx/">DOTX</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/dot/">DOT</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/odt/">ODT</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/ott/">OTT</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/word-processing/txt/">TXT</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/web/mhtml/">MHTML</a>, <a target="_blank" rel="nofollow" href="https://docs.fileformat.com/web/xhtml/">XHTML</a></li>
+                            <li>Advanced WYSIWYG editor</li>
+                            <li>Paste images, use styles, make text easier</li>
+                            <li>Compatible with all recent browsers like Chrome, Opera and Firefox</li>
+                            <li>Edit OpenOffice online</li>
+                </ul>
+            </div>
+            <div class="col-md-3 pull-right">
+                <a id="ProductImage" target="_blank" href="https://products.aspose.cloud/words/family" rel="noopener">
+                    <img src="https://products.aspose.app/img/howto.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+        <div id="content">
+            
+    <p>
+    Looking for a free, simple, online DOCX, RTF, ODT editor? Our online Word document processor allows to create, view & edit documents quickly and easily for free. The best way to view and edit your documents anywhere through your laptop, mobile phone or tablet.<br/>
+    Please, feel free to check our powerful <a target="_blank" id="acontent" href="https://products.aspose.cloud/words/family" >Cloud SDKs</a> and other easy-to-use online Apps.
+    </p>
+  
+        </div>
+
+
+<div class="tl bg-darkgray howtolist" id="howto">
+    <div class="container tl dflex">
+        <div class="howtosectiongfx">
+            <img class="lazyload" data-src="/img/aspose-words-app.png" alt="Editor">
+        </div>
+        <div class="howtosection">
+            <div>
+                <h2>How to edit a document file online</h2>
+                <ol>
+                        <li>Click inside the file drop area to upload a document file or drag & drop a document file.</li>
+                        <li>File will be automatically rendered for you to view, edit & download instantly.</li>
+                        <li>Download the original or edited document file.</li>
+                        <li>Convert & download the edited document file as PDF.</li>
+                        <li>Convert & download the edited document file as HTML.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="OtherApps" class="container-fluid otherapps hidden">
+    <div class="dashborder">
+        <div class="row">
+            <h4>Work with your documents in other free apps</h4>
+        </div>
+        <div class="row">
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/conversion" title="Edit your documents" onclick="otherAppClick('Conversion')">
+                            <div style="background-image: url('/img/apps/aspose_conversion-app.png')"></div>
+                            <span>Conversion</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/merger" title="Edit your documents" onclick="otherAppClick('Merger')">
+                            <div style="background-image: url('/img/apps/aspose_merger-app.png')"></div>
+                            <span>Merger</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/splitter" title="Edit your documents" onclick="otherAppClick('Splitter')">
+                            <div style="background-image: url('/img/apps/aspose_splitter-app.png')"></div>
+                            <span>Splitter</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/viewer" title="Edit your documents" onclick="otherAppClick('Viewer')">
+                            <div style="background-image: url('/img/apps/aspose_viewer-app.png')"></div>
+                            <span>Viewer</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/comparison" title="Edit your documents" onclick="otherAppClick('Comparison')">
+                            <div style="background-image: url('/img/apps/aspose_comparison-app.png')"></div>
+                            <span>Comparison</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/metadata" title="Edit your documents" onclick="otherAppClick('Metadata')">
+                            <div style="background-image: url('/img/apps/aspose_metadata-app.png')"></div>
+                            <span>Metadata</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/unlock" title="Edit your documents" onclick="otherAppClick('Unlock')">
+                            <div style="background-image: url('/img/apps/aspose_unlock-app.png')"></div>
+                            <span>Unlock</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/watermark" title="Edit your documents" onclick="otherAppClick('Watermark')">
+                            <div style="background-image: url('/img/apps/aspose_watermark-app.png')"></div>
+                            <span>Watermark</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/annotation" title="Edit your documents" onclick="otherAppClick('Annotation')">
+                            <div style="background-image: url('/img/apps/aspose_annotation-app.png')"></div>
+                            <span>Annotation</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/signature" title="Edit your documents" onclick="otherAppClick('Signature')">
+                            <div style="background-image: url('/img/apps/aspose_signature-app.png')"></div>
+                            <span>Signature</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/redaction" title="Edit your documents" onclick="otherAppClick('Redaction')">
+                            <div style="background-image: url('/img/apps/aspose_redaction-app.png')"></div>
+                            <span>Redaction</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/parser" title="Edit your documents" onclick="otherAppClick('Parser')">
+                            <div style="background-image: url('/img/apps/aspose_parser-app.png')"></div>
+                            <span>Parser</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/search" title="Edit your documents" onclick="otherAppClick('Search')">
+                            <div style="background-image: url('/img/apps/aspose_search-app.png')"></div>
+                            <span>Search</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-5ths col-md-5ths col-lg-5ths app-icon">
+                        <a href="/words/assembly" title="Edit your documents" onclick="otherAppClick('Assembly')">
+                            <div style="background-image: url('/img/apps/aspose_assembly-app.png')"></div>
+                            <span>Assembly</span>
+                        </a>
+                    </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="col-md-12 pt-5 app-features-section">
+        <div class="container tc pt-5">
+            <div class="col-md-4">
+                <div class="imgcircle fasteasy">
+                    <img src="/img/fast-easy.png" alt="Fast and Easy Editor" />
+                </div>
+                <h4>Fast and Easy Editor</h4>
+                <p>Upload your document and you will be redirected to the HTML Editor app with great user experience and many more features.</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="imgcircle anywhere">
+                    <img src="/img/anywhere.png" alt="Edit from Anywhere" />
+                </div>
+                <h4>Edit from Anywhere</h4>
+                <p>It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required for you.</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="imgcircle quality">
+                    <img src="/img/quality.png" alt="Editor Quality" />
+                </div>
+                <h4>Editor Quality</h4>
+                <p>Powered by <a target="_blank" id="PoweredBy" href="https://products.aspose.com/words" rel="noopener">Aspose.Words</a>. All files are processed using Aspose APIs, which are being used by many Fortune 100 companies across 114 countries.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+<div id="otherapps-panel">
+        <a href="/words/editor"
+           title="Edit your documents"
+           onclick="otherAppClick('Editor', true)"
+           class="otherapps-panel__button otherapps-panel__button_current"
+           style="background-image: url('/img/apps/aspose_editor-app.png')">Editor</a>
+        <a href="/words/conversion"
+           title="Convert your documents to PDF, HTML and other file formats"
+           onclick="otherAppClick('Conversion', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_conversion-app.png')">Conversion</a>
+        <a href="/words/conversion/pdf-to-word"
+           title="PDF to Word"
+           onclick="otherAppClick('PDF2Word', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/words/p2word.png')">PDF2Word</a>
+        <a href="/words/merger"
+           title="Merge Microsoft Word &amp; OpenOffice documents"
+           onclick="otherAppClick('Merger', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_merger-app.png')">Merger</a>
+        <a href="/words/splitter"
+           title="Split your documents"
+           onclick="otherAppClick('Splitter', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_splitter-app.png')">Splitter</a>
+        <a href="/words/viewer"
+           title="View your documents online"
+           onclick="otherAppClick('Viewer', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_viewer-app.png')">Viewer</a>
+        <a href="/words/comparison"
+           title="Compare two versions of a document and highlight differences"
+           onclick="otherAppClick('Comparison', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_comparison-app.png')">Comparison</a>
+        <a href="/words/metadata"
+           title="View and edit your document metadata properties"
+           onclick="otherAppClick('Metadata', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_metadata-app.png')">Metadata</a>
+        <a href="/words/unlock"
+           title="Unlock your password protected documents"
+           onclick="otherAppClick('Unlock', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_unlock-app.png')">Unlock</a>
+        <a href="/words/watermark"
+           title="Add or remove watermark in documents online"
+           onclick="otherAppClick('Watermark', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_watermark-app.png')">Watermark</a>
+        <a href="/words/annotation"
+           title="Remove annotations from your documents"
+           onclick="otherAppClick('Annotation', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_annotation-app.png')">Annotation</a>
+        <a href="/words/signature"
+           title="Sign documents with a handwritten, graphical or text signature"
+           onclick="otherAppClick('Signature', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_signature-app.png')">Signature</a>
+        <a href="/words/parser"
+           title="Extract text and images from your document"
+           onclick="otherAppClick('Parser', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_parser-app.png')">Parser</a>
+        <a href="/words/assembly"
+           title="Generate reports from templates"
+           onclick="otherAppClick('Assembly', true)"
+           class="otherapps-panel__button "
+           style="background-image: url('/img/apps/aspose_assembly-app.png')">Assembly</a>
+</div>
+
+
+<div id="social-panel">
+    <div class="share-button share-button__facebook" onClick="shareApp('facebook')">Share on Facebook</div>
+    <div class="share-button share-button__twitter" onClick="shareApp('twitter')">Share on Twitter</div>
+    <div class="share-button share-button__linkedin" onClick="shareApp('linkedin')">Share on LinkedIn</div>
+    <div class="share-button share-button__otherapp" onClick="shareApp('otherapp')">See other apps</div>
+    <div class="share-button share-button__cloud" onClick="shareApp('cloud')"><a href="https://products.aspose.cloud/words/family" target="_blank" rel="noopener">Try our Cloud API</a></div>
+    <div class="share-button share-button__github" onClick="shareApp('github')"><a href="https://github.com/aspose-words/Aspose.Words-for-.NET" target="_blank" rel="noopener">See source code</a></div>
+    <div class="share-button share-button__feedback" onClick="shareApp('feedback')">Leave a feedback</div>
+    <div class="share-button share-button__bookmark" onClick="shareApp('bookmark')">Bookmark this app</div>
+    <div class="modal fade" id="bookmarkModal" tabindex="-1" role="dialog" aria-labelledby="bookmarkModalLabel" style="justify-content:center;align-items:center;z-index:5100;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="bookmarkModalLabel">Bookmark this app</h4>
+                </div>
+                <div class="modal-body">
+                    Press Ctrl + D to add this page to your favorites or Esc to cancel the action.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sendEmailModal" tabindex="-1" role="dialog" aria-labelledby="sendEmailModalLabel" style="justify-content:center;align-items:center;z-index:5100;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="sendEmailModalLabel">Send the download link to</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input id="EmailToInput" type="email" name="email" class="form-control" placeholder="email address" autocomplete="on" />
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="button" class="btn btn-default" style="min-width:80px" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" style="min-width:80px" onclick="sendEmail()">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" style="justify-content:center;align-items:center;z-index:5100;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="feedbackModalLabel">Send us your feedback</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <textarea id="feedbackBody" name="feedbackBody" rows="7" maxlength="1000" class="form-control" style="resize:none" placeholder="Write here your opinion, suggestions, etc."></textarea>
+                        <div class="small">1000 characters maximum</div>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="button" class="btn btn-default" style="min-width:80px" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" style="min-width:80px" onclick="sendFeedbackExtended()">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div id="DynabicMenuFooter"></div>
+
+    <script>
+        if (document.documentElement.clientWidth < 800) {
+            document.getElementById("main").style.minHeight = screen.height - 10 + "px";
+        }
+    </script>
+
+    <script src="/scripts/words/base.min.js"></script>
+
+
+    <script src="/scripts/words/filedrop.min.js"></script>
+
+
+
+    <script>
+        var o = {"APIBasePath":"https://products.aspose.app/asposeapi/api/","UIBasePath":"https://products.aspose.app","ViewerPath":"https://products.aspose.app/words/view?","EditorPath":"https://products.aspose.app/words/edit?","FileSelectMessage":"Please select a file to upload","ShowViewerButton":true,"MaximumUploadFiles":10,"FileAmountMessage":"Please select less than ten files","UseSorting":false,"FileWrongTypeMessage":"You are trying to upload document(s) of unsupported type:","UploadOptions":["DOCX","PDF","MD","RTF","HTML","DOC","DOTX","DOT","ODT","OTT","TXT","MHT","MHTML","XHTML"],"Multiple":false,"Accept":".docx,.pdf,.md,.rtf,.html,.doc,.dotx,.dot,.odt,.ott,.txt,.mht,.mhtml,.xhtml","AppURL":"https://products.aspose.app/words/editor","AppName":"Editor","UploadAndRedirect":true};
+        $.extend(o, {
+            Method: requestEditor
+        });
+    </script>
+    </body>
+</html>
