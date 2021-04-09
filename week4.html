@@ -1,0 +1,266 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="design.css" type="text/css">
+  <script type="text/javascript" src="formValidation.js" defer></script>
+
+  <title>Product Order Form</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+
+      <h1> <img src="cart.jpg"> &emsp; Product Order Form</h1>
+    </div>
+
+    <h2> Products</h2>
+
+
+    <div class="topnav">
+
+      <input type="text" placeholder="Search..">
+
+    </div>
+
+
+
+    <div>
+
+
+      <div style="width: 0%; height: 100px; float: left; "></div>
+      <img src="tshirt1.jfif" class="img">
+      <div>
+        <div style="margin-left: 17%;margin-top: 0%; height: 100px; float: top; ">
+          <h1>
+            White T-Shirt
+          </h1>
+          <p>Simple Design . 100% Original Cotton. </p>
+
+          <label>
+            <span>Quantity: </span>
+            <select name="selection">
+              <option value="select">Select Quantity</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </label><label>
+            <span>Size </span>
+            <select name="selection">
+              <option value="select">Select Size</option>
+              <option value="AFG">XS</option>
+              <option value="ALA">S</option>
+              <option value="ALB">M</option>
+              <option value="ALB">L</option>
+              <option value="ALB">XL</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="d-flex">
+
+      <form action="" method="">
+
+
+        <label>
+          <span class="fname">First Name </span>
+          <input type="text" name="fname">
+        </label>
+
+
+        <label>
+          <span class="lname">Last Name </span>
+          <input type="text" name="lname">
+        </label>
+
+
+        <label>
+          <span class="Credit">Credit Card Number </span>
+          <input type="num" name="CCN">
+        </label>
+
+        <label>
+          <span>Security Code </span>
+          <input type="num" name="SC">
+        </label>
+
+        <label>
+          <span>Expiration Date </span>
+          <input type="num" name="ED">
+        </label>
+
+        <label>
+          <span>Postal Code </span>
+          <input type="num" name="CCN">
+        </label>
+    </div>
+    <br><br><br>
+
+    <!-- *end of first part * -->
+
+
+    <label>
+      <b> Full Name </b> <span class="fname">First Name </span>
+      <input type="text" name="fname">
+    </label>
+
+    <label>
+      <span class="lname">Last Name </span>
+      <input type="text" name="lname">
+    </label>
+
+
+    <label>
+      <span>Email Address <span class="required">*</span></span>
+      <input type="email" name="EA" placeholder="Ex:myname@example.com">
+    </label>
+
+    <label>
+      <span>Contact Number </span>
+      <input type="tel" name="CN" placeholder="(000) 000-0000">
+    </label><br>
+
+
+    <label>
+      <b> Billing Address </b> <span>Street Address </span>
+      <input type="text" name="houseadd" placeholder="" required>
+    </label>
+
+    <label>
+      <span>Street Address Line 2 </span>
+      <input type="text" name="houseadd" placeholder="" required>
+    </label>
+
+    <label>
+      <span>City </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>State / Province </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>Postal / ZIP Code </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>Country </span>
+      <select name="selection">
+        <option value="select">Select a country...</option>
+        <option value="AFG">Afghanistan</option>
+        <option value="ALA">Åland Islands</option>
+        <option value="ALB">Albania</option>
+      </select>
+    </label>
+    <br>
+
+    <label for="yes_no_radio">Send Gift </label>
+
+    <p>
+      <input type="radio" name="yes_No" checked>Yes</input> <input type="radio" name="yes_No">No</input>
+    </p>
+    <!-- Second art End  -->
+
+    <label>
+      <b> Full Name </b> <span class="fname">First Name </span>
+      <input type="text" name="fname">
+    </label>
+    <label>
+
+      <span>Last Name</span>
+      <input type="tel" name="CN" placeholder="(000) 000-0000">
+    </label>
+
+    <label>
+      <span>Phone Number </span>
+      <input type="tel" name="CN" placeholder="(000) 000-0000">
+    </label><br>
+
+    <label>
+      <span>Same as the Billing Address? </span>
+      <input type="checkbox">
+      Yes
+    </label>
+    <br>
+
+    <label>
+      <b> Shipping Address </b> <span>Street Address </span>
+      <input type="text" name="houseadd" placeholder="" required>
+    </label>
+
+    <label>
+      <span>Street Address Line 2 </span>
+      <input type="text" name="houseadd" placeholder="" required>
+    </label>
+
+    <label>
+      <span>City </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>State / Province </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>Postal / ZIP Code </span>
+      <input type="text" name="city">
+    </label>
+
+    <label>
+      <span>Country </span>
+      <select name="selection">
+        <option value="select">Select a country...</option>
+        <option value="AFG">Afghanistan</option>
+        <option value="ALA">Åland Islands</option>
+        <option value="ALB">Albania</option>
+      </select>
+    </label>
+
+    <div>
+      <label>
+        <span>Additional requests: </span>
+
+      </label>
+      <textarea style="font-size: 18px;border-radius: 5px;width: 60%;" class="form-control" rows="6" name="subject"
+        placeholder="subject"></textarea>
+    </div>
+    <br>
+
+    <button type="button" class="btn btn-success">Order Now</button>
+
+  </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
