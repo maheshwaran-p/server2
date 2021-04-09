@@ -165,7 +165,18 @@
             </style>
 
 
+            <input type="checkbox" class="consent" onclick="onClickHandler()" name="consent" value="">
+            <style>
+                .consent {
+                    /* padding-right: 20; */
+                    /* padding: auto; */
+                    padding-top: 100;
+                    float: left;
 
+
+
+                }
+            </style>
             <tr>
 
 
@@ -199,9 +210,18 @@
 
 
 
+                <script>
+                    Boolean = true;
+                    function onClickHandler() {
+                        Boolean = !Boolean;
+                        if (Boolean == true)
+                            document.getElementById("demo").innerHTML = "$00.00";
+                        else
+                            document.getElementById("demo").innerHTML = "$30.00";
+                    }
+                </script>
 
-
-                <h3 style=" float:right "> $30.00</h3><br><br>
+                <h3 style=" float:right " id="demo"> $00.00</h3><br><br>
 
             </tr><br><br>
 
