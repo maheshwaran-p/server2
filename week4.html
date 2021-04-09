@@ -4,7 +4,6 @@
 <head>
     <base target="_self">
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,7 +13,7 @@
 
 
 
-    <title>Product Order Form</title>
+
 
 
 <body>
@@ -23,20 +22,9 @@
 
     <div class="header">
         <img class="center" src="cart.jpg" alt="cart logo">
-        <h3 style=" text-align: left;  ">&emsp; &emsp;&emsp;&emsp;Product order Form </h3>
+        <h3 style=" text-align: left;  ">&emsp; &emsp;Product order Form </h3>
     </div><br>
-    <!-- <img class="center" src="https://94gctianstrust.org/img/logo.png" alt="94GCTians Trust Logo"> -->
-    <!-- <h3 class="header"> Download the files</h3>
-    <ul class="a">
-        <li class="a" onclick="download1()">Appendix-1</li>
-        <li class="a" onclick="download2()">Appendix-2</li><br> -->
 
-
-    <!-- <li class="popup" onclick="popup()">ReadMe !
-  <span class="popuptext" id="myPopup">	* Certificate MUST mention it is for “94GCTians Public CharitableTrust” Sponsorship.<br>
-*Certificate MUST mention that you are not getting any other scholarship. If you are getting anything, please mention the name of the scholarship and amount per year.<br>
-*Certificate MUST mention that you are staying in hostel (ONLY if you are a hosteller)</span>
-</li> -->
 
     <tr>
         <h3 class="heade" style="   ">&emsp; &emsp;Products &emsp;
@@ -54,10 +42,12 @@
             box-sizing: border-box;
             border: 2px solid white10;
             border-radius: 7px;" class="search" name="accountholdername" placeholder="Search " />
+
         </h3>
+
     </tr>
-    <?var url = getUrl();?>
-    <form method="post" action="<?= url ?>">
+
+    <form method="post" action="">
         <table cellpadding="1px">
             <style>
                 @media screen and (min-width: 480px) {
@@ -76,8 +66,8 @@
 
                 @media screen and (max-width: 480px) {
                     img.center {
-                        width: 4%;
-                        height: 41;
+                        width: 8%;
+                        height: 59;
                         float: left;
 
                         display: block;
@@ -177,7 +167,10 @@
 
 
             <tr>
+
+
                 <img class="center" src="tshirt1.jfif" alt="cart logo">
+
                 <h2>&emsp;&emsp;&emsp;&emsp; White T-shirt</h2>
                 <p>&emsp;&emsp;&emsp;&emsp; Simple Design.100% original Cotton</p>
                 <label class="department" for="dept" name="department"> &emsp;&emsp;&emsp;&emsp;Quantity:</label>
@@ -208,7 +201,7 @@
 
 
 
-
+                <h3 style=" float:right "> $30.00</h3><br><br>
 
             </tr><br><br>
 
@@ -219,6 +212,7 @@
 
             <tr>
                 <hr>
+                <h2 style=" float:right "> Total &emsp;&emsp;&emsp;$0.00</h2><br><br>
                 <!-- <h5 class="header" style="   ">Bank Details </h5> -->
 
             </tr><br>
@@ -375,15 +369,15 @@
 
             <tr>
 
-                <label class="bankname">
+                <label class="mail">
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     E-mail:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <input type="text" id="bankname" name="bankname" placeholder="myname@example.com" />
+                <input type="text" id="mail" name="mail" placeholder="myname@example.com" />
                 <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;example@example.com
                 </p>
 
                 <style>
-                    .bankname:after {
+                    .mail:after {
                         content: " *";
                         color: red;
 
@@ -395,9 +389,9 @@
 
             <tr>
 
-                <label class="branch"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Conatact
+                <label class="phoneno"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Contact
                     Number:</label>&emsp;&emsp;&emsp;&emsp;
-                <input type="text" id="branch" name="branch" placeholder="(000)000-0000" />
+                <input type="text" id="phoneno" name="phoneno" placeholder="(000)000-0000" />
 
 
 
@@ -581,9 +575,9 @@ border-radius: 7px;" name="academicyear" required>
 
             <tr>
 
-                <label class="branch"> &emsp;&emsp;&emsp;&emsp;Phone
+                <label class="phoneno"> &emsp;&emsp;&emsp;&emsp;Phone
                     Number:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <input type="text" id="branch" name="branch" placeholder="(000)000-0000" />
+                <input type="text" id="phoneno" name="phoneno" placeholder="(000)000-0000" />
 
 
 
@@ -594,7 +588,7 @@ border-radius: 7px;" name="academicyear" required>
             <br>
             <label class="branch"> &emsp;&emsp;&emsp;&emsp;Same as the Billing Address
                 ?</label>&emsp;
-            <input type="checkbox" class="consent" name="consent" value="YES" required>Yes
+            <input type="checkbox" class="consent" name="consent" value="YES">Yes
 
             </tr><br>
             <br>
@@ -723,7 +717,7 @@ border-radius: 7px;" name="academicyear" required>
                 name="subject" placeholder="subject"></textarea>
             <style>
                 input[type=submit] {
-                    background-color: blue;
+                    background-color: green;
                     border: none;
                     color: white;
                     border-radius: 10px;
@@ -733,7 +727,7 @@ border-radius: 7px;" name="academicyear" required>
                     width: 230;
                     cursor: pointer;
                     text-align: center;
-                    background: rgba(97, 4, 141, 1);
+                    background: rgb(20, 141, 4);
                     color: #fff;
                     text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
                     font-size: 14px;
@@ -744,7 +738,8 @@ border-radius: 7px;" name="academicyear" required>
             <tr>
                 <td colspan="2">
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input
-                        type="submit" onclick="myFunction()" value="Order Now" />
+                        type="submit" onclick="myFunction()" onclick="ValidateEmail(mail)"
+                        onclick="phonenumber(inputtxt)" value=" Order Now" />
 
                     <div id="snackbar">...Thanks For Submitting...</div>
 
@@ -754,6 +749,26 @@ border-radius: 7px;" name="academicyear" required>
 
                     <script>
 
+                        function phonenumber(phoneno) {
+
+                            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                            if ((inputtxt.value.match(phoneno))
+        {
+                                return true;
+                            }
+                            else {
+                                alert("message");
+                                return false;
+                            }
+
+                        }
+                        function ValidateEmail(mail) {
+                            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value)) {
+                                return (true)
+                            }
+                            alert("You have entered an invalid email address!")
+                            return (false)
+                        }
 
                         function myFunction() {
                             var username = document.getElementById("username").value;
@@ -762,8 +777,8 @@ border-radius: 7px;" name="academicyear" required>
                             var sem = document.getElementById("sem").value;
                             var accountholdername = document.getElementById("accountholdername").value;
                             var accountnumber = document.getElementById("accountnumber").value;
-                            var bankname = document.getElementById("bankname").value;
-                            var branch = document.getElementById("branch").value;
+                            var bankname = document.getElementById("mail").value;
+                            var branch = document.getElementById("phoneno").value;
                             var ifsc = document.getElementById("ifsc").value;
                             var micr = document.getElementById("micr").value;
 
@@ -779,6 +794,8 @@ border-radius: 7px;" name="academicyear" required>
                             }
 
                         }
+
+
 
                     </script>
                     <style>
