@@ -1,266 +1,872 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="design.css" type="text/css">
-  <script type="text/javascript" src="formValidation.js" defer></script>
+    <base target="_self">
+    <meta charset="utf-8">
 
-  <title>Product Order Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
 
 <body>
-  <div class="container">
-    <div class="title">
 
-      <h1> <img src="cart.jpg"> &emsp; Product Order Form</h1>
-    </div>
+    <!-- <img src="https://94gctianstrust.org/img/logo.png" alt="94GCTians Trust Logo" width="100%" height="110"> -->
+
+    <div class="header">
+        <img class="center" src="cart.jpg" alt="cart logo">
+        <h3 style=" text-align: left;  ">&emsp; &emsp;&emsp;&emsp;Product order Form </h3>
+    </div><br>
+    <!-- <img class="center" src="https://94gctianstrust.org/img/logo.png" alt="94GCTians Trust Logo"> -->
+    <!-- <h3 class="header"> Download the files</h3>
+    <ul class="a">
+        <li class="a" onclick="download1()">Appendix-1</li>
+        <li class="a" onclick="download2()">Appendix-2</li><br> -->
+
+
+    <!-- <li class="popup" onclick="popup()">ReadMe !
+  <span class="popuptext" id="myPopup">	* Certificate MUST mention it is for “94GCTians Public CharitableTrust” Sponsorship.<br>
+*Certificate MUST mention that you are not getting any other scholarship. If you are getting anything, please mention the name of the scholarship and amount per year.<br>
+*Certificate MUST mention that you are staying in hostel (ONLY if you are a hosteller)</span>
+</li> -->
+
+    <tr>
+        <h3 class="heade" style="   ">&emsp; &emsp;Products &emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;
+
+
+            <input type="text" style=" width: 10%;
+            padding: 10px 10px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 2px solid white10;
+            border-radius: 7px;" class="search" name="accountholdername" placeholder="Search " />
+        </h3>
+    </tr>
+    <?var url = getUrl();?>
+    <form method="post" action="<?= url ?>">
+        <table cellpadding="1px">
+            <style>
+                @media screen and (min-width: 480px) {
+                    img.center {
+                        width: 10%;
+                        height: 69;
+                        float: center;
+                        display: block;
+                        margin: 0 auto;
+                        float: left;
+
+                    }
+
+                    /* // #main {margin-left: 216px;} */
+                }
+
+                @media screen and (max-width: 480px) {
+                    img.center {
+                        width: 4%;
+                        height: 41;
+                        float: left;
+
+                        display: block;
+                        margin: 0 auto;
+
+                    }
+
+                    /* // #main {margin-left: 216px;} */
+                }
+
+                .a {
+
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    color: blue;
+                }
+
+                .b {
+                    text-align: center;
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    color: red;
+                }
+
+                ul.a {
+                    list-style-type: circle;
+                }
+
+                .download {
+                    /* //height: 80px; */
+
+                    width: 100%;
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                    left: 0;
+                    bottom: 0;
+                    margin: 0;
+                    text-align: center;
+                    background: rgba(97, 4, 141, 1);
+                    color: #fff;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+                    font-size: 14px;
+                    line-height: 25px;
+                }
+
+                @media screen and (min-width: 480px) {
+                    .header {
+                        /* //height: 80px; */
+                        padding-left: 15%;
+                        padding-right: 10%;
+                        width: 70%;
+                        padding-top: 0.5%;
+                        padding-bottom: 0.5%;
+                        left: 15%;
+                        right: 15%;
+                        bottom: 0;
+                        margin: 0;
+                        /* float: left; */
+                        text-align: center;
+                        background: rgba(97, 4, 141, 1);
+                        color: #fff;
+                        text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+                        font-size: 20px;
+                        line-height: 24px;
+                    }
+                }
+
+                @media screen and (max-width: 480px) {
+                    .header {
+                        /* //height: 80px; */
+
+                        width: 100%;
+                        padding-top: 1%;
+                        padding-bottom: 1%;
+                        left: 0;
+                        bottom: 0;
+                        margin: 0;
+                        text-align: center;
+                        background: rgba(97, 4, 141, 1);
+                        color: #fff;
+                        text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+                        font-size: 14px;
+                        line-height: 25px;
+                    }
+                }
+
+                input[type=text] {
+                    width: 100%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;
+                }
+            </style>
+
+
+
+            <tr>
+                <img class="center" src="tshirt1.jfif" alt="cart logo">
+                <h2>&emsp;&emsp;&emsp;&emsp; White T-shirt</h2>
+                <p>&emsp;&emsp;&emsp;&emsp; Simple Design.100% original Cotton</p>
+                <label class="department" for="dept" name="department"> &emsp;&emsp;&emsp;&emsp;Quantity:</label>
+
+                <select id="dept" name="department" required>
+                    <option value="">Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <label class="academicyear" for="year" name="academicyear">&emsp;&emsp;&emsp;&emsp;Size:</label>
+
+                <select id="year" name="academicyear" required>
+                    <option value="">Select</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+
+
+                </select>
+
+
+
+
+
+
+
+
+            </tr><br><br>
+
+            <tr>
+
+
+            </tr><br><br>
+
+            <tr>
+                <hr>
+                <!-- <h5 class="header" style="   ">Bank Details </h5> -->
+
+            </tr><br>
+
+            <style>
+                @media screen and (min-width: 480px) {
+                    input[type=text] {
+                        width: 50%;
+                        padding: 10px 10px;
+                        margin: 2px 0;
+                        box-sizing: border-box;
+                        border: 2px solid white10;
+                        border-radius: 7px;
+                    }
+                }
+
+                @media screen and (max-width: 480px) {
+                    input[type=text] {
+                        width: 75%;
+                        padding: 10px 10px;
+                        margin: 2px 0;
+                        box-sizing: border-box;
+                        border: 2px solid white10;
+                        border-radius: 7px;
+                    }
+                }
+            </style>
+            <tr>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
 
-    <h2> Products</h2>
+                <input type="text" style=" width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="bankname" name="bankname" />
 
 
-    <div class="topnav">
 
-      <input type="text" placeholder="Search..">
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First Name
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
+                    Name</p>
+            </tr>
 
-    </div>
 
+            <tr>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
+                <input type="text" style="width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
 
-    <div>
 
 
-      <div style="width: 0%; height: 100px; float: left; "></div>
-      <img src="tshirt1.jfif" class="img">
-      <div>
-        <div style="margin-left: 17%;margin-top: 0%; height: 100px; float: top; ">
-          <h1>
-            White T-Shirt
-          </h1>
-          <p>Simple Design . 100% Original Cotton. </p>
+                <input type="text" style=" width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="bankname" name="bankname" />
 
-          <label>
-            <span>Quantity: </span>
-            <select name="selection">
-              <option value="select">Select Quantity</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </label><label>
-            <span>Size </span>
-            <select name="selection">
-              <option value="select">Select Size</option>
-              <option value="AFG">XS</option>
-              <option value="ALA">S</option>
-              <option value="ALB">M</option>
-              <option value="ALB">L</option>
-              <option value="ALB">XL</option>
-            </select>
-          </label>
-        </div>
-      </div>
 
-    </div>
 
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Credit Card Number
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Securiy
+                    Code
+                    Name</p>
+            </tr>
 
-    <div class="d-flex">
 
-      <form action="" method="">
+            <tr>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
+                <input type="text" style="width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
 
-        <label>
-          <span class="fname">First Name </span>
-          <input type="text" name="fname">
-        </label>
 
 
-        <label>
-          <span class="lname">Last Name </span>
-          <input type="text" name="lname">
-        </label>
+                <input type="text" style=" width: 25%;
+                padding: 10px 10px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 2px solid white10;
+                border-radius: 7px;" id="bankname" name="bankname" />
 
 
-        <label>
-          <span class="Credit">Credit Card Number </span>
-          <input type="num" name="CCN">
-        </label>
-
-        <label>
-          <span>Security Code </span>
-          <input type="num" name="SC">
-        </label>
-
-        <label>
-          <span>Expiration Date </span>
-          <input type="num" name="ED">
-        </label>
-
-        <label>
-          <span>Postal Code </span>
-          <input type="num" name="CCN">
-        </label>
-    </div>
-    <br><br><br>
-
-    <!-- *end of first part * -->
-
-
-    <label>
-      <b> Full Name </b> <span class="fname">First Name </span>
-      <input type="text" name="fname">
-    </label>
-
-    <label>
-      <span class="lname">Last Name </span>
-      <input type="text" name="lname">
-    </label>
-
-
-    <label>
-      <span>Email Address <span class="required">*</span></span>
-      <input type="email" name="EA" placeholder="Ex:myname@example.com">
-    </label>
-
-    <label>
-      <span>Contact Number </span>
-      <input type="tel" name="CN" placeholder="(000) 000-0000">
-    </label><br>
-
-
-    <label>
-      <b> Billing Address </b> <span>Street Address </span>
-      <input type="text" name="houseadd" placeholder="" required>
-    </label>
-
-    <label>
-      <span>Street Address Line 2 </span>
-      <input type="text" name="houseadd" placeholder="" required>
-    </label>
-
-    <label>
-      <span>City </span>
-      <input type="text" name="city">
-    </label>
-
-    <label>
-      <span>State / Province </span>
-      <input type="text" name="city">
-    </label>
-
-    <label>
-      <span>Postal / ZIP Code </span>
-      <input type="text" name="city">
-    </label>
 
-    <label>
-      <span>Country </span>
-      <select name="selection">
-        <option value="select">Select a country...</option>
-        <option value="AFG">Afghanistan</option>
-        <option value="ALA">Åland Islands</option>
-        <option value="ALB">Albania</option>
-      </select>
-    </label>
-    <br>
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Expiration Date
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
+                    Code
+                </p>
+            </tr>
 
-    <label for="yes_no_radio">Send Gift </label>
 
-    <p>
-      <input type="radio" name="yes_No" checked>Yes</input> <input type="radio" name="yes_No">No</input>
-    </p>
-    <!-- Second art End  -->
+            <tr> &emsp; &emsp; &emsp; &emsp;
 
-    <label>
-      <b> Full Name </b> <span class="fname">First Name </span>
-      <input type="text" name="fname">
-    </label>
-    <label>
+                <h3> &emsp;&emsp;&emsp;&emsp;&emsp;Full Name</h3> &emsp; &emsp; &emsp; &emsp;
 
-      <span>Last Name</span>
-      <input type="tel" name="CN" placeholder="(000) 000-0000">
-    </label>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-    <label>
-      <span>Phone Number </span>
-      <input type="tel" name="CN" placeholder="(000) 000-0000">
-    </label><br>
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
 
-    <label>
-      <span>Same as the Billing Address? </span>
-      <input type="checkbox">
-      Yes
-    </label>
-    <br>
 
-    <label>
-      <b> Shipping Address </b> <span>Street Address </span>
-      <input type="text" name="houseadd" placeholder="" required>
-    </label>
 
-    <label>
-      <span>Street Address Line 2 </span>
-      <input type="text" name="houseadd" placeholder="" required>
-    </label>
+                <input type="text" style=" width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="bankname" name="bankname" />
 
-    <label>
-      <span>City </span>
-      <input type="text" name="city">
-    </label>
 
-    <label>
-      <span>State / Province </span>
-      <input type="text" name="city">
-    </label>
 
-    <label>
-      <span>Postal / ZIP Code </span>
-      <input type="text" name="city">
-    </label>
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First
+                    Name
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
+                    Name
+                </p>
+            </tr>
 
-    <label>
-      <span>Country </span>
-      <select name="selection">
-        <option value="select">Select a country...</option>
-        <option value="AFG">Afghanistan</option>
-        <option value="ALA">Åland Islands</option>
-        <option value="ALB">Albania</option>
-      </select>
-    </label>
 
-    <div>
-      <label>
-        <span>Additional requests: </span>
 
-      </label>
-      <textarea style="font-size: 18px;border-radius: 5px;width: 60%;" class="form-control" rows="6" name="subject"
-        placeholder="subject"></textarea>
-    </div>
-    <br>
 
-    <button type="button" class="btn btn-success">Order Now</button>
 
-  </div>
-  </form>
+            <tr>
 
+                <label class="bankname">
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    E-mail:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="bankname" name="bankname" placeholder="myname@example.com" />
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;example@example.com
+                </p>
 
+                <style>
+                    .bankname:after {
+                        content: " *";
+                        color: red;
 
+                    }
+                </style>
 
 
+            </tr>
 
+            <tr>
 
+                <label class="branch"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Conatact
+                    Number:</label>&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="branch" name="branch" placeholder="(000)000-0000" />
 
 
 
 
+            </tr>
+            <br> <br>
+
+            <tr>
+
+                <label class="ifsc"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Billing
+                    Account</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="ifsc" name="ifsc" />
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
+                    Address
+
+
+                </p>
+            </tr>
+
+
+            <tr>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="micr" name="micr" required />
+
+
+
+            </tr>
+
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
+                    Address Line 2
+
+
+                </p>
+            </tr>
+
+
+            <tr> &emsp; &emsp; &emsp; &emsp;
+                &emsp; &emsp; &emsp; &emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
+
+                <input type="text" style=" width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="bankname" name="bankname" />
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;State
+                    / Province
+
+                </p>
+            </tr>
+
+
+
+
+            <tr> &emsp; &emsp; &emsp; &emsp;
+                &emsp; &emsp; &emsp; &emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
+
+
+
+                <select id="year" style=" width: 25%;
+padding: 10px 10px;
+margin: 2px 0;
+box-sizing: border-box;
+border: 2px solid white10;
+border-radius: 7px;" name="academicyear" required>
+                    <option value="">Select</option>
+                    <option value="AFG">Afghanistan</option>
+                    <option value="ALA">Åland Islands</option>
+                    <option value="ALB">Albania</option>
+                    <option value="ALA">India </option>
+                    <option value="ALB">Austrilia</option>
+
+                </select>
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
+                    / Zip Code
+
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    Country
+
+                </p>
+            </tr><br>
+
+
+
+
+
+            <tr>
+
+                <h4 class="accounttype2"> &emsp;&emsp;&emsp;&emsp;&emsp;Send Gift:
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <input type="radio" class="accounttype"
+                        name="accounttype" value="savings" required>
+                    <label for="male">Yes</label>
+                    &emsp;&emsp;&emsp;&emsp;
+                    <input type="radio" id="accounttype" name="accounttype" value="current" required>
+                    <label for="female">No</label>
+                </h4>
+
+                </style>
+
+            </tr><br><br>
+
+            <tr> &emsp; &emsp; &emsp; &emsp;
+
+                <h4> &emsp;&emsp;&emsp;&emsp;&emsp;Full Name</h4> &emsp; &emsp; &emsp; &emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
+
+                <input type="text" style=" width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="bankname" name="bankname" />
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First
+                    Name
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
+                    Name
+                </p>
+            </tr>
+
+
+
+            <tr>
+
+            <tr>
+
+                <label class="branch"> &emsp;&emsp;&emsp;&emsp;Phone
+                    Number:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="branch" name="branch" placeholder="(000)000-0000" />
+
+
+
+
+            </tr>
+            <br>
+
+            <br>
+            <label class="branch"> &emsp;&emsp;&emsp;&emsp;Same as the Billing Address
+                ?</label>&emsp;
+            <input type="checkbox" class="consent" name="consent" value="YES" required>Yes
+
+            </tr><br>
+            <br>
+
+            <tr>
+
+                <label class="ifsc"> &emsp; &emsp;&emsp;&emsp;Shipping
+                    Account</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="ifsc" name="ifsc" required />
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
+                    Address
+
+
+                </p>
+            </tr>
+
+
+            <tr>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="text" id="micr" name="micr" required />
+
+
+
+            </tr>
+
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
+                    Address Line 2
+
+
+                </p>
+            </tr>
+
+
+            <tr> &emsp; &emsp; &emsp; &emsp;
+                &emsp; &emsp; &emsp; &emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
+
+                <input type="text" style=" width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="bankname" name="bankname" />
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;State
+                    / Province
+
+                </p>
+            </tr>
+
+
+
+
+            <tr> &emsp; &emsp; &emsp; &emsp;
+                &emsp; &emsp; &emsp; &emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="text" style="width: 25%;
+                    padding: 10px 10px;
+                    margin: 2px 0;
+                    box-sizing: border-box;
+                    border: 2px solid white10;
+                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+
+
+
+
+
+                <select id="year" style=" width: 25%;
+padding: 10px 10px;
+margin: 2px 0;
+box-sizing: border-box;
+border: 2px solid white10;
+border-radius: 7px;" name="academicyear" required>
+                    <option value="">Select</option>
+                    <option value="AFG">Afghanistan</option>
+                    <option value="ALA">Åland Islands</option>
+                    <option value="ALB">Albania</option>
+                    <option value="ALA">India </option>
+                    <option value="ALB">Austrilia</option>
+
+                </select>
+
+
+
+            </tr>
+            <tr>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
+                    / Zip Code
+
+                    &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    Country
+
+                </p>
+            </tr><br>
+
+
+            <label class="ifsc"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Additional requests
+                Account</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <textarea style="font-size: 18px;border-radius: 5px;width: 60%;" class="form-control" rows="6"
+                name="subject" placeholder="subject"></textarea>
+            <style>
+                input[type=submit] {
+                    background-color: blue;
+                    border: none;
+                    color: white;
+                    border-radius: 10px;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                    margin: 4px 2px;
+                    width: 230;
+                    cursor: pointer;
+                    text-align: center;
+                    background: rgba(97, 4, 141, 1);
+                    color: #fff;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            </style>
+
+            <tr>
+                <td colspan="2">
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input
+                        type="submit" onclick="myFunction()" value="Order Now" />
+
+                    <div id="snackbar">...Thanks For Submitting...</div>
+
+
+
+
+
+                    <script>
+
+
+                        function myFunction() {
+                            var username = document.getElementById("username").value;
+                            var dept = document.getElementById("dept").value;
+                            var year = document.getElementById("year").value;
+                            var sem = document.getElementById("sem").value;
+                            var accountholdername = document.getElementById("accountholdername").value;
+                            var accountnumber = document.getElementById("accountnumber").value;
+                            var bankname = document.getElementById("bankname").value;
+                            var branch = document.getElementById("branch").value;
+                            var ifsc = document.getElementById("ifsc").value;
+                            var micr = document.getElementById("micr").value;
+
+
+
+
+
+                            var x = document.getElementById("snackbar");
+                            if (username != '' && bankname != '' && dept != '' && year != '' && sem != '' && accountholdername != '' && accountnumber != '' && branch != '' && ifsc != '' && micr != '' && fileName != '' && fileName2 != '' && fileName3 != '' && fileName4 != '' && fileName5 != '' && fileName6 != '' && fileName7 != '' && fileName8 != ' ' && fileName9 != '' && fileName11 != '' && fileName12 != '' && fileName13 != '' && fileName14 != '' && fileName15 != ' ' && fileName16 != '' && fileName17 != '') {
+                                x.className = "show";
+                                setTimeout(function () { x.className = x.className.replace("show", ""); }, 9000);
+                                // location.replace("https://mahesh.newsled.in")
+                            }
+
+                        }
+
+                    </script>
+                    <style>
+                        #snackbar {
+                            visibility: hidden;
+                            min-width: 250px;
+                            margin-left: -125px;
+                            background-color: #333;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 2px;
+                            padding: 16px;
+                            position: fixed;
+                            z-index: 1;
+                            left: 50%;
+                            bottom: 30px;
+                            font-size: 17px;
+                        }
+
+                        #snackbar.show {
+                            visibility: visible;
+                            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                        }
+
+                        @-webkit-keyframes fadein {
+                            from {
+                                bottom: 0;
+                                opacity: 0;
+                            }
+
+                            to {
+                                bottom: 30px;
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes fadein {
+                            from {
+                                bottom: 0;
+                                opacity: 0;
+                            }
+
+                            to {
+                                bottom: 30px;
+                                opacity: 1;
+                            }
+                        }
+
+                        @-webkit-keyframes fadeout {
+                            from {
+                                bottom: 30px;
+                                opacity: 1;
+                            }
+
+                            to {
+                                bottom: 0;
+                                opacity: 0;
+                            }
+                        }
+
+                        @keyframes fadeout {
+                            from {
+                                bottom: 30px;
+                                opacity: 1;
+                            }
+
+                            to {
+                                bottom: 0;
+                                opacity: 0;
+                            }
+                        }
+                    </style>
+
+
+
+
+
+
+                </td>
+            </tr>
+
+
+
+        </table>
+    </form>
 
 
 </body>
+
+</html>
