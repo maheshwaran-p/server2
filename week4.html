@@ -165,7 +165,7 @@
             </style>
 
 
-            <input type="checkbox" class="consent" onclick="onClickHandler()" name="consent" value="">
+            <input id="demo3" type="checkbox" class="consent" onclick="onClickHandler()" name="consent" value="yes">
             <style>
                 .consent {
                     /* padding-right: 20; */
@@ -186,8 +186,8 @@
                 <p>&emsp;&emsp;&emsp;&emsp; Simple Design.100% original Cotton</p>
                 <label class="department" for="dept" name="department"> &emsp;&emsp;&emsp;&emsp;Quantity:</label>
 
-                <select id="dept" name="department" required>
-                    <option value="">Select</option>
+                <select id="dept" name="department" onclick="onClickHandler()" required>
+
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -213,11 +213,25 @@
                 <script>
                     Boolean = true;
                     function onClickHandler() {
+
+
                         Boolean = !Boolean;
-                        if (Boolean == true)
+
+
+
+                        if (Boolean == true) {
                             document.getElementById("demo").innerHTML = "$00.00";
-                        else
+                            document.getElementById("demo2").innerHTML = "$00.00";
+                        }
+                        else {
+                            var value2 = document.getElementById("dept").value;
+                            var val3 = value2 * 30
+
                             document.getElementById("demo").innerHTML = "$30.00";
+
+                            document.getElementById("demo2").innerHTML = "$" + val3 + ".00";
+
+                        }
                     }
                 </script>
 
@@ -232,7 +246,7 @@
 
             <tr>
                 <hr>
-                <h2 style=" float:right "> Total &emsp;&emsp;&emsp;$0.00</h2><br><br>
+                <h2 style=" float:right " id="demo2"> Total &emsp;&emsp;&emsp;$0.00</h2><br><br>
                 <!-- <h5 class="header" style="   ">Bank Details </h5> -->
 
             </tr><br>
