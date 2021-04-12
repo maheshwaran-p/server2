@@ -5,10 +5,13 @@
     <base target="_self">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="design.css" type="text/css">
+    <script type="text/javascript" src="week4.js" defer></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 
@@ -35,9 +38,12 @@
                 &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
 
 
+                <!-- <div class="input-icons">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input id="search" type="text" placeholder="search">
+                </div> -->
 
-
-                <input type="text" style="width:10%" class="search" placeholder="Search " />
+                <input type="text" class="inp-icon" id="search" placeholder="Search " />
 
             </h3>
 
@@ -83,32 +89,8 @@
 
 
 
-                    <script>
-                        Boolean = true;
-                        function onClickHandler() {
 
-
-                            Boolean = !Boolean;
-
-
-
-                            if (Boolean == true) {
-                                document.getElementById("demo").innerHTML = "$00.00";
-                                document.getElementById("demo2").innerHTML = "$00.00";
-                            }
-                            else {
-                                var value2 = document.getElementById("dept").value;
-                                var val3 = value2 * 30
-
-                                document.getElementById("demo").innerHTML = "$30.00";
-
-                                document.getElementById("demo2").innerHTML = " Total  :$" + val3 + ".00";
-
-                            }
-                        }
-                    </script>
-
-                    <h3 style=" float:right " id="demo"> $00.00</h3><br><br>
+                    <h3 id="demo"> $00.00</h3><br><br>
 
                 </tr><br><br>
 
@@ -119,7 +101,8 @@
 
                 <tr>
                     <hr>
-                    <h2 style=" float:right " id="demo2"> Total :&emsp;&emsp;&emsp;$0.00</h2><br><br>
+                    <h2 id="demo2"> Total :&emsp;&emsp;&emsp;$0.00</h2>
+                    <br><br>
                     <!-- <h5 class="header" style="   ">Bank Details </h5> -->
 
                 </tr><br>
@@ -191,21 +174,11 @@
 
 
 
-                        <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
+                        <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
-                        <input type="text" style=" width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="part2lname" name="bankname" />
+                        <input type="text" id="part2lname" name="bankname" />
                     </h4>
 
 
@@ -233,13 +206,7 @@
                     <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;example@example.com
                     </p>
 
-                    <style>
-                        .mail:after {
-                            content: " *";
-                            color: red;
 
-                        }
-                    </style>
 
 
                 </tr>
@@ -298,21 +265,11 @@
 
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-                    <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
-                    <input type="text" style=" width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="bankname" name="bankname" />
+                    <input type="text" id="part2fname" name="bankname" />
 
 
 
@@ -334,23 +291,13 @@
 
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-                    <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
 
 
-                    <select id="year" style=" width: 25%;
-padding: 10px 10px;
-margin: 2px 0;
-box-sizing: border-box;
-border: 2px solid white10;
-border-radius: 7px;" name="academicyear">
+                    <select id="year" class="select2" name="academicyear">
                         <option value="">Select</option>
                         <option value="AFG">Afghanistan</option>
                         <option value="ALA">Åland Islands</option>
@@ -399,21 +346,11 @@ border-radius: 7px;" name="academicyear">
 
                         &emsp;&emsp;&emsp;
 
-                        <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+                        <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
-                        <input type="text" style=" width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="bankname" name="bankname" />
+                        <input type="text" id="part2lname" name="bankname" />
                     </h4>
 
 
@@ -493,21 +430,11 @@ border-radius: 7px;" name="academicyear">
 
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-                    <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
-                    <input type="text" style=" width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="bankname" name="bankname" />
+                    <input type="text" id="part2fname" name="bankname" />
 
 
 
@@ -529,23 +456,13 @@ border-radius: 7px;" name="academicyear">
 
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-                    <input type="text" style="width: 25%;
-                    padding: 10px 10px;
-                    margin: 2px 0;
-                    box-sizing: border-box;
-                    border: 2px solid white10;
-                    border-radius: 7px;" id="accountholdername" name="accountholdername" />&emsp;&emsp;&emsp;
+                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
 
 
 
 
 
-                    <select id="year" style=" width: 25%;
-padding: 10px 10px;
-margin: 2px 0;
-box-sizing: border-box;
-border: 2px solid white10;
-border-radius: 7px;" name="academicyear">
+                    <select id="year" class="select2" name="academicyear">
                         <option value="">Select</option>
                         <option value="AFG">Afghanistan</option>
                         <option value="ALA">Åland Islands</option>
@@ -584,135 +501,6 @@ border-radius: 7px;" name="academicyear">
                             onclick="phonenumber(inputtxt)" value=" Order Now" />
 
                         <div id="snackbar">...Order Placed...</div>
-
-
-
-
-
-                        <script>
-
-                            function phonenumber(phoneno) {
-
-                                var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-                                if ((inputtxt.value.match(phoneno))
-        {
-                                    return true;
-                                }
-                                else {
-                                    alert("message");
-                                    return false;
-                                }
-
-                            }
-                            function ValidateEmail(mail) {
-                                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value)) {
-                                    return (true)
-                                }
-                                alert("You have entered an invalid email address!")
-                                return (false)
-                            }
-
-                            function myFunction() {
-                                var username = document.getElementById("username").value;
-                                var dept = document.getElementById("dept").value;
-                                var year = document.getElementById("year").value;
-                                var sem = document.getElementById("sem").value;
-                                var accountholdername = document.getElementById("accountholdername").value;
-                                var accountnumber = document.getElementById("accountnumber").value;
-                                var bankname = document.getElementById("mail").value;
-                                var branch = document.getElementById("phoneno").value;
-                                var ifsc = document.getElementById("ifsc").value;
-                                var micr = document.getElementById("micr").value;
-
-
-
-
-
-                                var x = document.getElementById("snackbar");
-                                if (username != '' && bankname != '' && dept != '' && year != '' && sem != '' && accountholdername != '' && accountnumber != '' && branch != '' && ifsc != '' && micr != '' && fileName != '' && fileName2 != '' && fileName3 != '' && fileName4 != '' && fileName5 != '' && fileName6 != '' && fileName7 != '' && fileName8 != ' ' && fileName9 != '' && fileName11 != '' && fileName12 != '' && fileName13 != '' && fileName14 != '' && fileName15 != ' ' && fileName16 != '' && fileName17 != '') {
-                                    x.className = "show";
-                                    setTimeout(function () { x.className = x.className.replace("show", ""); }, 9000);
-                                    // location.replace("https://mahesh.newsled.in")
-                                }
-
-                            }
-
-
-
-                        </script>
-                        <style>
-                            #snackbar {
-                                visibility: hidden;
-                                min-width: 250px;
-                                margin-left: -125px;
-                                background-color: #333;
-                                color: #fff;
-                                text-align: center;
-                                border-radius: 2px;
-                                padding: 16px;
-                                position: fixed;
-                                z-index: 1;
-                                left: 50%;
-                                bottom: 30px;
-                                font-size: 17px;
-                            }
-
-                            #snackbar.show {
-                                visibility: visible;
-                                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-                                animation: fadein 0.5s, fadeout 0.5s 2.5s;
-                            }
-
-                            @-webkit-keyframes fadein {
-                                from {
-                                    bottom: 0;
-                                    opacity: 0;
-                                }
-
-                                to {
-                                    bottom: 30px;
-                                    opacity: 1;
-                                }
-                            }
-
-                            @keyframes fadein {
-                                from {
-                                    bottom: 0;
-                                    opacity: 0;
-                                }
-
-                                to {
-                                    bottom: 30px;
-                                    opacity: 1;
-                                }
-                            }
-
-                            @-webkit-keyframes fadeout {
-                                from {
-                                    bottom: 30px;
-                                    opacity: 1;
-                                }
-
-                                to {
-                                    bottom: 0;
-                                    opacity: 0;
-                                }
-                            }
-
-                            @keyframes fadeout {
-                                from {
-                                    bottom: 30px;
-                                    opacity: 1;
-                                }
-
-                                to {
-                                    bottom: 0;
-                                    opacity: 0;
-                                }
-                            }
-                        </style>
-
-
 
 
 
