@@ -132,8 +132,8 @@ input[type=text] {
 
     /* padding-right: 20; */
     /* padding: auto; */
-    /* padding-top: 100;
-text-align: center; */
+     /* padding-top: 400px; */
+text-align: bottom; 
     float: left;
 }
 
@@ -197,14 +197,14 @@ width: 25%;
 }
 
 input[type=submit] {
-    background-color: green;
+    background-color: rgb(114, 240, 114);
     border: none;
     color: white;
     border-radius: 10px;
     padding: 10px 15px;
     text-decoration: none;
     margin: 4px 2px;
-    width: 230;
+    width: 330;
     cursor: pointer;
     text-align: center;
     background: rgb(20, 141, 4);
@@ -214,7 +214,12 @@ input[type=submit] {
     line-height: 22px;
 }
 
-.search{
+.inp-icon{
+    background: url(https://mahesh.newsled.in/search.png)no-repeat 100%;
+    background-size: 18px;
+    padding-right: 30px;
+     }
+#search{
 
     width: 10%;
     padding: 10px 10px;
@@ -224,3 +229,103 @@ input[type=submit] {
     border: 2px solid white10;
     border-radius: 7px;
 }
+
+.mail:after {
+    content: " *";
+    color: red;
+
+}
+
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+
+
+.select2{
+
+width: 25%;
+    padding: 10px 10px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 2px solid white10;
+    border-radius: 7px;
+}
+
+#demo{
+
+    float:right ;padding-right: 94px;
+}
+
+#demo2{
+    float:right  ; padding-right: 80px;
+
+}
+
