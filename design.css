@@ -1,163 +1,77 @@
 
-body{
-  background: url('http://all4desktop.com/data_images/original/4236532-background-images.jpg');
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #262626;
-  margin: 5% 0;
-  margin-left:auto;
-margin-right:auto;
- 
-
-}
-.container{
-  width: 100%;
-  height: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 1200px)
-{
-  .container{
-    max-width: 1140px;
-  }
-}
-.d-flex{
-  /* display: flex;
-  flex-direction: row; */
-  /* background: #f6f6f6; */
-  border-radius: 0 0 5px 5px;
-  padding: 35px 85px;
-  
+ input[type=text] {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 2px solid white10;
+    border-radius: 7px;
 }
 
+@media screen and (max-width: 480px) {
+    .header {
+        /* //height: 80px; */
 
-
-
-form{
-  flex: 5;
+        width: 100%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        text-align: center;
+        background: rgba(97, 4, 141, 1);
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+        font-size: 14px;
+        line-height: 25px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .header {
+        /* //height: 80px; */
+        padding-left: 15%;
+        padding-right: 10%;
+        width: 70%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        left: 15%;
+        right: 15%;
+        bottom: 0;
+        margin: 0;
+        /* float: left; */
+        text-align: center;
+        background: rgba(97, 4, 141, 1);
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
-
-.title{
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #5195A8), color-stop(100, #70EAFF));
-  background: -moz-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: -ms-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: -o-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);
-  border-radius:5px 5px 0 0 ;
-  padding: 20px;
-  color: #f6f6f6;
-}
-h2{
-  margin: 0;
-  padding-left: 15px; 
-  text-align: top-center;
+@media screen and (min-width: 480px) {
+    input[type=text] {
+        width: 50%;
+        padding: 10px 10px;
+        margin: 2px 0;
+        box-sizing: border-box;
+        border: 2px solid white10;
+        border-radius: 7px;
+    }
 }
 
-h1{
-  margin: 0;
-  padding-left: 155px; 
-  padding-left: 25px;
-  text-align: top-center; 
-}
-.required{
-  color: red;
-}
-img{
-  width: 100px;
-  height:100px;
+@media screen and (max-width: 480px) {
+    input[type=text] {
+        width: 75%;
+        padding: 10px 10px;
+        margin: 2px 0;
+        box-sizing: border-box;
+        border: 2px solid white10;
+        border-radius: 7px;
+    }
 }
 
+.mail:after {
+    content: " *";
+    color: red;
 
-
-.search-container button {
-  float: right;
-  padding: 3px 8px 10px 20px;
-  margin-top: 8px;
-  margin-right: 8px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  width:-5px;
- 
 }
-
- .search-container button:hover {
-  background: #262626;
-  float: right;
- 
-}
-
- .topnav a, .topnav input[type=text], .topnav .search-container button {
-float: right;
-    display: block;
-    text-align: left;
-    width: 14%;
-    margin: 0;
-    padding: 7px;
-    border-radius: 10px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid rgb(70, 66, 66);  
-  }
-  
-input[type="text"], input[type="tel"],select
-{
-height: 24px;
-  /* flex: 0 0 200px;  */
-  margin-left: 30px;
-  border-radius: 10px;
-  width: 45%;
-  padding: 5px 10px;
-  margin-bottom: 0px;
-  border: 1px solid #dadada;
-  color: #888;
-   display: flex; 
-  /* top: 1em; */
-  position: relative;
-} 
-
-input[type="email"], input[type="num"], select
-
-{
-  height: 24px;
-    flex: 100 600 200px; 
-    margin-left: 30px;
-    border-radius: 10px;
-    width: 45%;
-    padding: 5px 10px;
-    margin-bottom: 0px;
-    border: 1px solid #dadada;
-    color: #888;
-     display: flex; 
-    /* top: 1em; */
-    position: relative;
-  } 
-
-label {
-  
-  flex-direction: row;
-  justify-content: flex-end;
-  text-align: bottom;
-  width: 400px;
-  line-height: 26px;
-  margin-bottom: 10px;
-  /* float:left; */
-  display: inline-block;
-    
- 
-}
-
-p{
-  display: block;
-  color: rgb(22, 21, 21);
-  margin: 0;
-  padding-left: 25px;
-}
-
-
-
-
