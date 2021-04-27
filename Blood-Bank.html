@@ -1,27 +1,279 @@
-<!DOCTYPE html>
-<html>
-    <head>
-  
- <meta charset="UTF-8">
-     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-     <style type="text/css">
-                body, html
-                {
-                }
 
-                #content
-                {
-                    position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-                }
-   
-            </style>
-    </head>
-    <body> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Y's Club</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.css" rel="stylesheet">
+
+  <style>
+       .form-control:focus {
+  box-shadow: none;
+  border:1px solid #ced4da;
+}
+.btn:focus {
+      outline: none;
+        box-shadow: none;
+  }
+  .input-btn:focus {
+    outline: none;
+        box-shadow: none;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container">
+
+      <div class="logo float-left">
+       <img src="/static/assets/img/logoYs.png"  alt="">
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/projects">Project</a></li>
+          <li><a href="/photos">Photos</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/members/home">Log in</a></li>
+          <li><a href="/yslibrary/">Y's Library</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  
+  
+  <style>
+  .loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  }
+  /* Safari */
+  @-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+  }
+  </style>
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>BLOOD SHARE</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      
+      
+      <div class="container" style="padding-left: 40px;padding-right: 40px;">
+        <a href="/bloodshare/register" style="margin-right: 20px;" class="float-right btn btn-primary">Register as a donor</a>
+        <br>
+        <br>
+        <a href="/bloodshare/profile" style="margin-right: 20px;" class="float-right btn btn-primary">My Profile</a>
+        <br>
+        <br>
+        <a href="/bloodshare/need" style="margin-right: 20px;" class="float-right btn btn-primary">Need blood ? Register here</a>
+        <br>
+        <br>
+        <form method="post" autocomplete="off">
+          <input type="hidden" name="csrfmiddlewaretoken" value="StfV54xhg9fGa0oYLs152vqHXQgrso4XSdiivFciU2Z8UQDQRtAUfRSSqG7weYNa">
+          <h3>Search for donors:</h3>
+          <label for="cars">Blood Group : &emsp;</label>
+          <select  id="blood_group" oninput="search_donor()" class="form-group" name="bloodgroup">
+            
+              <option value="O-">O-</option>
+            
+              <option value="O+">O+</option>
+            
+              <option value="A-">A-</option>
+            
+              <option value="A+">A+</option>
+            
+              <option value="B-">B-</option>
+            
+              <option value="B+">B+</option>
+            
+              <option value="AB-">AB-</option>
+            
+              <option value="AB+">AB+</option>
+            
+          </select><br>
+          Place or Location :
+          <div class="form-group" style="max-width: 300px;padding-top: 4px;">
+            <input type="text" oninput="search_donor()"  class="form-control" name="location" id="place_location"  required="true"/>
+          </div>
+          <button onclick="return search_donor()" class="btn btn-primary">Search</button>
+        </form>
+        <br>
+        
+        <br>
+      </div>
+      <div class="container" style="margin-top: 10px;padding-left: 40px;padding-right: 20px;" id="search_results"></div>
+      <div class="container" style="margin-top: 10px;padding-left: 40px;padding-right: 20px;">
+        <h4>Blood needs:</h4>
+        <div class="list-group" >
+          
+            <div class="list-group-item" style="margin-top: 10px;border-radius: 10px;">
+              <div class="float-right">
+                Nov. 4, 2020
+              </div>
+              <br>
+              Patient name : Kabilan’s <br>
+              Blood group : O-<br>
+              Blood units required : 3<br>
+              Phone : 6380788874<br>
+              Attender name : Rahuram <br>
+              hospital_name : Kmch<br>
+              Location : Yes<br>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+function search_donor () {
+var bloodgroup = document.getElementById('blood_group');
+var location = document.getElementById('place_location');
+var result = document.getElementById('search_results');
+result.innerHTML = '<div style="margin-left : 40px;" class="loader"></div>'
+console.log(bloodgroup.value);
+console.log(location.value);
+$.ajax({
+url:"/bloodshare/search",
+method: "POST",
+data:{ 'bloodgroup':bloodgroup.value, 'location':location.value,'csrfmiddlewaretoken':"StfV54xhg9fGa0oYLs152vqHXQgrso4XSdiivFciU2Z8UQDQRtAUfRSSqG7weYNa",},
+success:function(data){
+console.log(data['html_data']);
+result.innerHTML = data['html_data'];
+}
+});
+return false;
+}
+</script>
+
+  
+   <!-- ======= Footer ======= -->
+   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/projects">Project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/photos">Photos</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/team">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/team">Y's Library</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/contact-us">Contact us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/media/by_law.pdf">By Law</a></li>
+            </ul>
+          </div>
 
     
 
-    <div id="content">
-    <iframe onload="onFrameLoad(this)" id="app" src="  http://35.224.185.70/bloodshare " frameborder="0" height="100%" width="100%"></iframe>
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Government College of Technology <br>
+              Thadagam Road<br>
+              Coimbatore<br><br>
+              <strong>Mobile:</strong>6383279480<br>
+              <strong>Email:</strong>youthclubgct@gmail.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About Y's Men</h3>
+            <p>Y's Men International is oriented to serving the worldwide YMCA and the communities in which it is present throughout the world.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/Gctyouth" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ysyouth_gct/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCR0cH_iOjKTkfM1TCgXL3yA/" class="youtube"><i class="bx bxl-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/ysc-of-gct-youth-y-s-men-international-7242901a7/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </body>
-    </html>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Y's Service Club of GCT YOUTH</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits"> Designed by <a href="https://www.linkedin.com/in/naveen-k-7230b5163">Naveen Rajesh </a>and Maintained by <a href="https://www.linkedin.com/in/kabilan-ponraj-505521194/">Kabilan P</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>
