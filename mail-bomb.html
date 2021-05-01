@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        function sendEmail() {
+
+            var x = document.getElementById('from').value;
+            var y = document.getElementById('to').value;
+            var subject = document.getElementById('subject').value;
+            var body = document.getElementById('body').value;
+            var num = document.getElementById('num').value;
+            var addr = ["BMW@gmail.com", "Volvo@gmail.com", "Saab@gmail.com", "redbus@gmail.com", "dream11@gmail.com", "amazon@gmail.com", "flipkart2gmail.com", "mpl@gmail.com", "suntv@gmail.com", "ktv@gmail.com", "foodball@gmail.com", "airinida@gmail.com", "sunsinger@gmail.com"];
+            if (x == "") {
+                alert("From Address must be filled out");
+                return false;
+            }
+
+            if (y == "") {
+                alert("To Address must be filled out");
+                return false;
+            }
+            if (subject == "") {
+                alert("To Address must be filled out");
+                return false;
+            }
+            if (body == "") {
+                alert("To Address must be filled out");
+                return false;
+            }
+
+            while (num >= 0 && num <= 12) {
+                min = Math.ceil(0);
+                max = Math.floor(12);
+                ran = Math.floor(Math.random() * (max - min + 1) + min);
+                num--;
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "noreplyty751@gmail.com",
+                    Password: "gct@1234",
+                    To: y,
+                    From: addr[ran],
+                    Subject: subject,
+                    Body: body,
+                })
+                    .then(function (message) {
+                        // alert("mail sent successfully")
+                    });
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=number],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=button] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+    <h3>Mail Bomb</h3>
+
+    <div class="container">
+        <form method="post">
+
+
+            <label for="fname"></label>
+            <input type="text" value="Do Not Use Me For Revenge . It's Only To Prank Your Friends!" id="from"
+                name="firstname" placeholder="Do Not Use Me For Revenge . It's Only To Prank Your Friends!"
+                onloadeddata="Hide" onloadstart="Hide">
+
+            <label for="lname">To</label>
+            <input type="text" id="to" name="lastname" placeholder="receiver@gmail.com">
+
+
+            <label for="lname">Subject</label>
+            <input type="text" id="body" name="body" placeholder="Subject">
+
+            <label for="subject">Body</label>
+            <textarea id="subject" name="subject" placeholder="Compose email" style="height:200px"></textarea>
+
+            <label for="lname">Count</label>
+            <input type="number" id="num" name="num" placeholder="Count must be less than 10">
+
+            <input type="button" value="Send Email" onclick="sendEmail()" /><br>
+        </form>
+    </div>
+</body>
+
+</html>
