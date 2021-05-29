@@ -2,80 +2,58 @@
 <html>
 
 <head>
-    <base target="_self">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Order Form</title>
+    <script type="text/javascript" src="formValidation.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <link rel="stylesheet" href="design.css" type="text/css">
-    <script type="text/javascript" src="week4.js" defer></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
+<body>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <div class="banner1">
 
+        <img src="logo.jpg" class="">
+        <h1> <b> Western Sydney University - Club Shop <b> </h1>
 
+    </div>
 
-
-
-
-
-    <body">
-
-        <!-- <img src="https://94gctianstrust.org/img/logo.png" alt="94GCTians Trust Logo" width="100%" height="110"> -->
-
-        <div class="header">
-            <img class="center" src="cart.jpg" alt="cart logo">
-            <h3 style=" text-align: left;  ">&emsp; &emsp;Product order Form </h3>
-        </div><br>
-
-
-        <tr>
-            <h3 class="heade">&emsp; &emsp;Products &emsp;
-                &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
-                &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
-
-                &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
-                &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
-
-
-                <!-- <div class="input-icons">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <input id="search" type="text" placeholder="search">
-                </div> -->
-
-                <input type="text" class="inp-icon" id="search" placeholder="Search " />
-
-            </h3>
-
-        </tr>
-
-        <form method="post" action="">
+    <div class="testbox">
+        <form style="padding-left: 20px;"><br>
+            <link rel="stylesheet" href="order.css" type="text/css">
+            <div class="banner">
+                <h1>Product Order Form</h1>
+            </div>
             <table cellpadding="1px">
+                <h3>&nbsp;&nbsp;Products </h3>
+
+                <div>
+                    <div style="float:left; margin-left: -160px;">
+                        <img src="tshirt1.jfif" class="" style="float:right;">
+                        <input id="demo3" type="checkbox" class="largerCheckbox" onclick="onClickHandler()"
+                            name="consent" value="yes">
 
 
 
-                <input id="demo3" type="checkbox" class="consent" onclick="onClickHandler()" name="consent" value="yes">
+                    </div>
 
-                <tr>
-                    <p style="float: left; color: transparent;"> #####</p>
+                    <input type="text" class="inp-icon" id="search" placeholder="Search " />
 
-                    <img class="center" src="tshirt1.jfif" alt="cart logo">
+                    <h2>&emsp;&nbsp;White T-shirt</h2>
+                    <p>&emsp;&nbsp;&nbsp;&nbsp; Simple Design. 100% original Cotton</p>
+                    <label class=" quantity" for="quan" name="quantity"> &emsp;&nbsp;&nbsp;&nbsp; Quantity:</label>
 
-                    <h2>&emsp;&emsp;&emsp;&emsp; White T-shirt</h2>
-                    <p>&emsp;&emsp;&emsp;&emsp; Simple Design.100% original Cotton</p>
-                    <label class="department" for="dept" name="department"> &emsp;&emsp;&emsp;&emsp;Quantity:</label>
 
                     <select id="dept" name="department" onclick="onClickHandler()">
-
+                        </tr>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <label class="academicyear" for="year" name="academicyear">&emsp;&emsp;&emsp;&emsp;Size:</label>
+                    <label class="sizing" for="year" name="sizing">&emsp;&emsp;Size:</label>
 
-                    <select id="year" name="academicyear">
+                    <select id="year" name="size">
 
                         <option value="XS">XS</option>
                         <option value="S">S</option>
@@ -85,435 +63,286 @@
 
 
                     </select>
+                    <div class="pricing">
+                        <h3 class="price1" id="price"> $0.00</h3>
+                    </div>
+                </div>
 
-
-
-
-
-                    <h3 id="demo"> $00.00</h3><br><br>
-
-                </tr><br><br>
-
-                <tr>
-
-
-                </tr><br><br>
 
                 <tr>
                     <hr>
-                    <h2 id="demo2"> Total :&emsp;&emsp;&emsp;$0.00</h2>
-                    <br><br>
-                    <!-- <h5 class="header" style="   ">Bank Details </h5> -->
-
-                </tr><br>
-
-
-
-                <tr>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="firstname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                    <input type="text" id="lastname" name="bankname" />
-
-
+                    <div class="pricing1">
+                        <h2 class="price2" id="total_price" style=" font-size: 24px;
+color: purple;"> Total :$0.00</h2>
+                    </div>
 
                 </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First Name
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
-                        Name</p>
-                </tr>
-
-
-                <tr>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="firstname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                    <input type="text" id="lastname" name="bankname" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Credit Card Number
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Securiy
-                        Code
-                    </p>
-                </tr>
-
-
-                <tr>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="firstname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                    <input type="text" id="lastname" name="bankname" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Expiration Date
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
-                        Code
-                    </p>
-                </tr>
-
-
-                <tr> &emsp; &emsp; &emsp; &emsp;
-
-                    <h4> &emsp;&emsp;&emsp;&emsp;Full Name &emsp; &emsp; &emsp; &emsp;&emsp;&emsp;&emsp;
-
-
-
-                        <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                        <input type="text" id="part2lname" name="bankname" />
-                    </h4>
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First
-                        Name
-                        &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
-                        Name
-                    </p>
-                </tr>
-
-
-
-
-
-                <tr>
-
-                    <label class="mail">
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                        E-mail:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="mail" name="mail" placeholder="myname@example.com" required />
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;example@example.com
-                    </p>
-
-
-
-
-                </tr>
-
-                <tr>
-
-                    <label class="phoneno"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Contact
-                        Number:</label>&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="phoneno" name="phoneno" placeholder="(000)000-0000" />
-
-
-
-
-                </tr>
-                <br> <br>
-
-                <tr>
-
-                    <label class="ifsc"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Billing
-                        Account</label>&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="ifsc" name="ifsc" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
-                        Address
-
-
-                    </p>
-                </tr>
-
-
-                <tr>
-
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="micr" name="micr" />
-
-
-
-                </tr>
-
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
-                        Address Line 2
-
-
-                    </p>
-                </tr>
-
-
-                <tr> &emsp; &emsp; &emsp; &emsp;
-                    &emsp; &emsp; &emsp; &emsp;
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                    <input type="text" id="part2fname" name="bankname" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City
-                        &emsp;&emsp;&emsp; &emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;State
-                        / Province
-
-                    </p>
-                </tr>
-
-
-
-
-                <tr> &emsp; &emsp; &emsp; &emsp;
-                    &emsp; &emsp; &emsp;
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-
-
-                    <select id="year" class="select2" name="academicyear">
-                        <option value="">Select</option>
-                        <option value="AFG">Afghanistan</option>
-                        <option value="ALA">Åland Islands</option>
-                        <option value="ALB">Albania</option>
-                        <option value="ALA">India </option>
-                        <option value="ALB">Austrilia</option>
-
-                    </select>
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
-                        / Zip Code
-
-                        &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                        Country
-
-                    </p>
-                </tr><br>
-
-
-
-
-
-                <tr>
-
-                    <h4 class="accounttype2"> &emsp;&emsp;&emsp;&emsp;&emsp;Send Gift:
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <input type="radio" class="accounttype"
-                            name="accounttype" value="savings">
-                        <label for="male">Yes</label>
-                        &emsp;&emsp;&emsp;&emsp;
-                        <input type="radio" id="accounttype" name="accounttype" value="current">
-                        <label for="female">No</label>
-                    </h4>
-
-                    </style>
-
-                </tr><br>
-
-                <tr>
-
-                    <h4> &emsp;&emsp;&emsp;&emsp;&emsp;Full Name &emsp; &emsp; &emsp; &emsp;
-
-                        &emsp;&emsp;&emsp;
-
-                        <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                        <input type="text" id="part2lname" name="bankname" />
-                    </h4>
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First
-                        Name
-                        &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last
-                        Name
-                    </p>
-                </tr>
-
-
-
-                <tr>
-
-                <tr>
-
-                    <label class="phoneno"> &emsp;&emsp;&emsp;&emsp;Phone
-                        Number:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="phoneno" name="phoneno" placeholder="(000)000-0000" />
-
-
-
-
-                </tr>
-                <br>
-
-                <br>
-                <label class="branch"> &emsp;&emsp;&emsp;&emsp;Same as the Billing Address
-                    ?</label>&emsp;&emsp;
-                <input type="checkbox" class="cosent" name="consent" value="YES">Yes
-
-                </tr><br>
-                <br>
-
-                <tr>
-
-                    <label class="ifsc"> &emsp; &emsp;&emsp;&emsp;Shipping
-                        Account</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="ifsc" name="ifsc" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
-                        Address
-
-
-                    </p>
-                </tr>
-
-
-                <tr>
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="micr" name="micr" />
-
-
-
-                </tr>
-
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Street
-                        Address Line 2
-
-
-                    </p>
-                </tr>
-
-
-                <tr> &emsp; &emsp; &emsp; &emsp;
-                    &emsp; &emsp; &emsp; &emsp;
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-                    <input type="text" id="part2fname" name="bankname" />
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City
-                        &emsp;&emsp;&emsp; &emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;State
-                        / Province
-
-                    </p>
-                </tr>
-
-
-
-
-                <tr> &emsp; &emsp; &emsp; &emsp;
-                    &emsp; &emsp; &emsp; &emsp;
-
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-                    <input type="text" id="part2fname" name="accountholdername" />&emsp;&emsp;&emsp;
-
-
-
-
-
-                    <select id="year" class="select2" name="academicyear">
-                        <option value="">Select</option>
-                        <option value="AFG">Afghanistan</option>
-                        <option value="ALA">Åland Islands</option>
-                        <option value="ALB">Albania</option>
-                        <option value="ALA">India </option>
-                        <option value="ALB">Austrilia</option>
-
-                    </select>
-
-
-
-                </tr>
-                <tr>
-                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
-                        / Zip Code
-
-                        &emsp;&emsp;
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                        Country
-
-                    </p>
-                </tr><br>
-
-
-                <p class="ifsc" style="padding: auto;">&emsp;&emsp;&emsp;Additional requests
-                    Account</p>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <textarea style="font-size: 18px;border-radius: 5px;width: 60%;" class="form-control" rows="6"
-                    name="subject" placeholder="subject"></textarea>
-
-
-                <tr>
-                    <td colspan="2">
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input
-                            type="submit" onclick="myFunction()" onclick="ValidateEmail(mail)"
-                            onclick="phonenumber(inputtxt)" value=" Order Now" />
-
-                        <div id="snackbar">...Order Placed...</div>
-
-
-
-
-                    </td>
-                </tr>
-
-
-
             </table>
+
+            <div class="colums1">
+
+                <div class="item">
+                    <br><input id="fname" type="text" name="fname">
+                    <br><label for="first" id="firstnameerror">&emsp;&emsp;&nbsp;First Name</label>
+                </div>
+
+                <div class="item">
+                    <br> <input id="lname" type="text" name="lname">
+                    <br><label for="last" id="lastnameerror">&emsp;&emsp;&nbsp;Last Name</label>
+                </div>
+            </div>
+
+            <div class="colums1">
+                <div class="item">
+                    <br> <input id="CCN" onclick="return CredN()" type="text" name="CCN">
+                    <br><label for="Credit" id="crediterror2">&emsp;&emsp;&nbsp;Credit Card Number </label>
+                </div>
+
+                <div class="item">
+                    <br> <input id="SC" onclick="sc()" type="text" name="SC">
+                    <br><label for="Security" id="securityerror">&emsp;&emsp;&nbsp;Security Code </label>
+                </div>
+            </div>
+
+            <div class="colums1">
+                <div class="item">
+                    <br><input id="ED" type="text" name="ED">
+                    <br><label for="EDate" id="ederror">&emsp;&emsp;&nbsp;Expirartion Date </label>
+                </div>
+
+                <div class="item">
+                    <br> <input id="PC" type="text" name="PC">
+                    <br><label id="postcodeerror" for="PostalC">&emsp;&emsp;&nbsp;Postal Code</label>
+                </div>
+
+            </div>
+
+
+            <br> <br>
+            <div class="colums1">
+                <div class="item">
+                    <br> &emsp;&emsp;&emsp;Full Name &emsp;&emsp;&emsp; <input id="fname2" onchange="firstname2()"
+                        onsubmit="firstname2()" type="text" name="fname2">
+                    <br><label for="first"
+                        id="firstnameerror2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        First
+                        Name</label>
+                </div>
+
+                <div class="item">
+                    <br> <input id="lname2" onchange="lastname2()" type="text" name="lname2"><br>
+                    <label for="last" id="lastnameerror2">&emsp;&emsp; Last Name</label>
+                </div>
+            </div>
+
+            <div class="colums2">
+                <div class="item">
+                    <br> &emsp;&emsp;&emsp;Email*&emsp;&emsp;&emsp;&emsp;&emsp; <input type="text" id="mail"
+                        onchange="ValidateEmail()" onsubmit=" ValidateEmail()" name="mail"
+                        placeholder="myname@example.com" required />
+                    <label for="Email"
+                        id="mailerror">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;example@example.com</label>
+                </div>
+
+                <div class="item">
+                    <br> &emsp;&emsp;&emsp;Contact Number &nbsp; <input onchange="contactnumber()"
+                        onsubmit="contactnumber()" id="CN" type="text" name="CN">
+                    <br><label id="contacterror" for="Contact"></label>
+                </div>
+
+                <div class="item">
+                    <br> &emsp;&emsp;&emsp;Billing Address &emsp; <input id="BA" name="shippingname" type="text"
+                        name="BA">
+                    <br><label
+                        for="Billing">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                        Street
+                        Address</label>
+                </div>
+
+                <div class="item">
+                    <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;<input id="SA"
+                        name="shippingcity" type="text" name="SA">
+                    <br><label
+                        for="Street2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                        Street
+                        Address Line 2</label>
+                </div>
+
+
+
+                <div class="colums1">
+
+                    <div class="item">
+                        <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input id="City"
+                            name="shippingname2" type="text" name="cName">
+                        <br><label
+                            for="City">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;City</label>
+                    </div>
+
+                    <div class="item">
+                        <br> <input id="state" name="shippingcity2" type="text" name="state">
+                        <br><label for="s_Provience">&emsp;&emsp;&nbsp;State/Provience</label>
+                    </div>
+
+                </div>
+                <div class="colums1">
+                    <div class="item">
+                        <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input id="Postal"
+                            name="shippingname3" type="text" name="Postal">
+                        <br><label for="p_zip"
+                            id="postcodeerror">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
+                            /
+                            Zip Code</label>
+                    </div>
+
+                    <div class="styled">
+                        <select id="continent" name="continent" name="shippingcity3">
+                            <option>Please Select</option>
+                            <option value="Aus">Australia</option>
+                            <option value="USA">America</option>
+                            <option value="CH">China</option>
+                            <option value="IND">India</option>
+                            <option value="UK">UK</option>
+                        </select>
+                        <br><label for="c_Name">Country</label>
+                    </div>
+                </div>
+            </div>
+            <label>&emsp;&emsp;&emsp;Send Gift
+                <input type="radio" name="showGreen" onclick="onClickHandler3()" value="yes" id="radio_3" />
+                <label for="radio_2" value="yes" class="radio">Yes</label>
+                <input type="radio" name="showGreen" value="no" onclick="onClickHandler4()" id="radio_3" />
+                <label for="radio_2" id="newsame" class="radio">No</label>
+
+                <br> <br>
+                <div id="hide">
+
+
+
+
+                    <div class="colums1">
+
+                        <div class="item">
+                            &emsp;&emsp;&emsp;Full Name&emsp;&emsp;&emsp;<input id="fname3" onchange="firstname3()"
+                                type="text" name="fname3">
+                            <br><label id="firstnameerror3"
+                                for="first">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First
+                                Name</label>
+                        </div>
+
+                        <div class="item">
+                            <input id="lname3" onchange="lastname3()" type="text" name="lname3">
+                            <br><label id="lastnameerror3" for="last">&emsp;&emsp;Last Name</label>
+                        </div>
+
+                    </div>
+
+                    <div class="colums2">
+                        <div class="item">
+                            <br> &emsp;&emsp;&emsp;Phone Number &emsp;<input id="PN" type="text" name="PN">
+                            <br><label onchange="phonenumber()" onsubmit="phonenumber()" id=" phoneerror"
+                                for="p_Number"></label>
+                        </div>
+
+                        &emsp;&emsp;&emsp;Same as the Billing Address? <label class="container">
+                            <input type="checkbox" name="billingtoo" id="same" onclick="FillBilling(this.form)"
+                                value="yes">
+                            <span class="checkmark"></span>
+
+                        </label>
+                        <br> <br>
+                        <div id="myDIV">
+
+                            <div class="item">
+                                <br> &emsp;&emsp;&emsp;Shipping Address&nbsp;<input id="SA" type="text"
+                                    name="billingname">
+                                <br><label
+                                    for="ship_Address">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                    Street Address</label>
+                            </div>
+
+                            <div class="item">
+                                <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;<input id="SA2"
+                                    name="billingcity" type="text">
+                                <br><label
+                                    for="ship_Address2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                    Street
+                                    Address Line 2</label>
+                            </div>
+
+
+                            <div class="colums1">
+                                <div class="item">
+                                    <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input
+                                        id="CN" name="billingname2" type="text" name="c_Name">
+                                    <br><label
+                                        for="city">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City</label>
+                                </div>
+
+                                <div class="item">
+                                    <br> <input id="state" type="text" name="billingcity2" name="state_Name">
+                                    <br><label for="s_Name">&emsp;&emsp;State/Provience</label>
+                                </div>
+
+                            </div>
+                            <div class="colums1">
+                                <div class="item">
+                                    <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input
+                                        id="PC" name="billingname3" type="text" name="PC">
+                                    <br><label
+                                        for="post_Code">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Postal
+                                        /
+                                        Zip
+                                        Code</label>
+                                </div>
+
+                                <div class="styled">
+                                    <select id="continent" name="continent" name="billingcity3">
+                                        <option>Please Select</option>
+                                        <option value="Aus">Australia</option>
+                                        <option value="USA">America</option>
+                                        <option value="CH">China</option>
+                                        <option value="IND">India</option>
+                                        <option value="UK">UK</option>
+                                    </select>
+                                    <br><label for="c_Name">Country</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br> <br>
+                <div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-25">
+
+                        <label for="subject">&emsp;&emsp;&emsp;Additional Requests &emsp;&emsp;&emsp;&emsp; </label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder=""
+                            style="height:100px ;margin-top: 28px; margin-left: 187px;"></textarea>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="btn-block">
+                    <br>
+
+                    <butt id=" submit" type="submit" onclick="return validd()">Order Now</butt> <br> <br> <br>
+                </div>
+
         </form>
-
-
-        </body>
+    </div>
+    </div>
+</body>
 
 </html>
